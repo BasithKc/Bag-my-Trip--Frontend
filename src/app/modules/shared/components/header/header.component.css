@@ -1,0 +1,6 @@
+#menu ul li:hover {
+  background-color: gray;
+}
+#nav ul li:hover {
+  color: orangered;
+}
