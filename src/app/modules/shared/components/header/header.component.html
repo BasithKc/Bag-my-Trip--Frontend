@@ -1,24 +1,27 @@
-<header class="absoulte flex p-5 md:pl-[100px] lg:pl-[150px] xl:pl-[200px] justify-between items-center bg-transparent">
-  <div>
-    <a routerLink="/">
-      <img class="w-[120px]" src="assets/images/bag my trip logo new.png" alt="">
-    </a>
+<header class="fixed top-0 w-full p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] bg-transparent">
+  <div class="flex items-center justify-between ">
+    <div>
+      <a routerLink="/">
+        <img class="w-[120px] lg:w-[150px]" src="assets/images/White bag my trip logo new_.png" alt="">
+      </a>
+    </div>
+    <div class="sm:block md:hidden text-white text-xl">
+      <i class="fa-solid fa-bars cursor-pointer" (click)="toggleMenu()"></i>
+    </div>
+    <div id="nav" class="hidden md:block">
+      <ul class="space-x-[50px] flex text-lg text-white">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+    <div class="hidden md:block">
+      <button class="rounded-md bg-orange-600 p-3 text-white text-sm hover:bg-orange-800">
+        Get in Tocuh
+      </button>
+    </div>
   </div>
-  <div class="sm:block md:hidden">
-    <i class="fa-solid fa-bars cursor-pointer" (click)="toggleMenu()"></i>
-  </div>
-  <div id="nav" class="hidden md:block">
-    <ul class="space-x-10 flex">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  </div>
-  <div class="hidden md:block">
-    <button class="rounded-md bg-orange-600 p-3 text-white text-sm hover:bg-orange-800">
-      Get in Tocuh
-    </button>
-  </div>
+ 
 </header>
 
 <!-- Mobine nav -->
