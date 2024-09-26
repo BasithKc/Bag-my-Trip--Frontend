@@ -25,12 +25,15 @@
 </header>
 
 <!-- Mobine nav -->
- <nav id="menu" [@menuAnimation]="isMenuOpen? 'open': 'closed' " class="fixed top-0 left-0 w-full h-full bg-white opacity-0  flex-col items-center justify-center z-50 p-3 pt-5 md:hidden">
-    <ul class="text-xl space-y-5 ">
+ <nav id="menu" [@menuAnimation]="isMenuOpen? 'open': 'closed' " class="fixed top-0 left-0 w-full h-full bg-white opacity-0  flex-col items-center justify-center z-50 p-3 pt-5 md:hidden bg-purple-900 text-white font-bold">
+  <div class="flex justify-center">
+    <img src="../../../../../assets/images/bag my trip logo new.png" class="w-[150px]" alt="">
+    <button id="close-nav" class="absolute top-5 right-5 text-3xl" (click)="toggleMenu()">&times;</button>
+  </div>
+    <ul class="text-xl space-y-5 mt-5">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="close-nav" class="absolute top-5 right-5 text-3xl" (click)="toggleMenu()">&times;</button>
  </nav>

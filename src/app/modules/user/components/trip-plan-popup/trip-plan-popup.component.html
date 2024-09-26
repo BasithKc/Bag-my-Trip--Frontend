@@ -1,0 +1,31 @@
+<div *ngIf="showPopup" class="fixed inset-0  bg-black overflow-scroll p-10  bg-opacity-50 flex justify-center items-center">
+  <div class="bg-blue-300 text-white p-2 rounded-lg shadow-lg max-w-md  w-full mt-10">
+    <h2 class="text-2xl font-bold mb-4 text-center">Choose Your Trip</h2>
+    <div *ngIf="!selectedTripType" class="space-y-2 ">
+      <button  *ngFor="let type of tripTypes" 
+              (click)="selectTripType(type)"
+              class="py-2 px-4 w-full font-semibold text-white text-black rounded uppercase hover:scale-110 shadow-md mt-10 hover:text-orange-600 border-1 border-x-black">
+        {{ type }}  
+      </button>
+    </div>
+    <div *ngIf="selectedTripType && !selectedBudget" class="space-y-2">
+      <h3 class="text-xl font-semibold mb-2">Select Your Budget</h3>
+      <button *ngFor="let budget of budgetRanges" 
+              (click)="selectBudget(budget)"
+              class="w-full py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300">
+        ${{ budget[0] }} - ${{ budget[1] }}
+      </button>
+    </div>
+    <div *ngIf="selectedTripType && selectedBudget" class="mt-4">
+      <p class="mb-4">You selected a {{ selectedTripType }} trip with a budget of ${{ selectedBudget[0] }} - ${{ selectedBudget[1] }}</p>
+      <button (click)="confirmSelection()"
+              class="w-full py-2 px-4 bg-purple-500 text-white rounded hover:bg-purple-600 transition duration-300">
+        Confirm
+      </button>
+    </div>
+    <button (click)="closePopup()" 
+            class="mt-4 w-full py-2 px-4 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition duration-300">
+      Close
+    </button>
+  </div>
+</div>
