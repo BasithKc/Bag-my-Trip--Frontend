@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class TripPlanPopupComponent {
   @Output() planSelected = new EventEmitter<{type: string, budget: number[]}>();
 
-  showPopup: boolean = true
+  showPopup: boolean = false
   tripTypes = ['family', 'solo', 'couple', 'group']
   budgetRanges = [[10,20], [20,30], [30,40]]
   selectedTripType: string | null = null

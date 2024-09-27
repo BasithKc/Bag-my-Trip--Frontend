@@ -1,12 +1,13 @@
 import { ChangeDetectorRef, Component } from "@angular/core";
 import { slideInBottom } from "src/app/modules/shared/animations";
+import { InviewDirective } from "src/app/modules/shared/in-view.directive";
 
 @Component({
     selector : "app-services",
     templateUrl : "./services.component.html",
     animations : [
         slideInBottom
-    ]
+    ],
 })
 export class ServicesComponent {
     constructor(private cdr: ChangeDetectorRef) {}
@@ -40,7 +41,7 @@ export class ServicesComponent {
         },
     ]
 
-    onCardInView(index: number, isVisible: boolean): void {
+    onCardInView(index: number, isVisible: any): void {
         this.cardVisibility[index] = isVisible
         this.cdr.detectChanges()  // Trigger change detection
     }
