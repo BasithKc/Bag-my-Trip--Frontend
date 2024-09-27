@@ -1,21 +1,21 @@
-<div class="w-full h-auto py-5 flex flex-col gap-2">
+<div class="w-full h-auto  flex flex-col gap-2">
     <div class="text-center text-xs text-orange-500"><b>CATEGORY</b></div>
     <div class="text-[1.2rem] text-center mb-2">
         <b>We Offer Best Services</b>
     </div>
     <!-- Card container -->
-    <div class="flex gap-5 md:gap-8 lg:gap-10 flex-wrap justify-center">
+    <div class="flex gap-5 md:gap-8 lg:gap-10 justify-center flex-wrap ">
         <!-- Card div -->
         <div
             *ngFor="let service of serviceList; let i = index" 
             [@slideInBottom]="cardVisibility[i] ? 'visible' : 'hidden'" 
             (inView)="onCardInView(i, $event)"
             
-            class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[12rem] flex flex-col p-4 rounded-2xl gap-3 hover:shadow-light_wide"
+            class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[15rem] flex flex-col p-4 rounded-2xl gap-3 hover:shadow-light_wide"
         > 
             <div class="flex items-center justify-center"><img [src]="service.image" class="w-3/5 h-3/5" alt=""></div>
-            <div class="text-sm text-center"><b>{{ service.heading }}</b></div>
-            <div class="text-gray-600 text-xs text-center">{{ service.body }}</div>
+            <div class="text-sm lg:text-lg text-center"><b>{{ service.heading }}</b></div>
+            <div class="text-gray-600 text-xs lg:text-sm text-center">{{ service.body }}</div>
         </div>
     </div>
 </div>
