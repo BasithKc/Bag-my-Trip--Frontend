@@ -5,7 +5,7 @@
     </div>
 
       <div class="flex w-full items-center mt-10 text-sm">
-        <div class="rounded-lg shadow-md flex items-center filter-search ">
+        <div class="rounded-lg shadow-md flex items-center filter-search p-2">
           <div class="border-r border-gray-300 p-2  md:p-4 lg:px-6 xl:px-8 flex items-center">
             <select class="outline-none text-gray-700 bg-transparent appearance-none px-2 ">
               <option disabled selected>Where to?</option>
@@ -35,6 +35,11 @@
         <button (click)="openTripPlanPopup()" class="plan-btn shadow-md bg-green-500 text-white px-6 py-2 lg:px-10 lg:py-5 lg:text-lg rounded-r-lg hover:bg-orange-600 transition duration-100">Choose your plan <i class="fa-solid fa-arrow-right"></i></button>
       </div>
   </div>
+
+  <!-- Whatsapp Icon -->
+     <a (click)="openWhatsApp()" class="fixed bottom-10 right-10 lg:bottom-20 lg:right-20 text-[2.3rem] lg:text-[3rem] cursor-pointer">
+      <i class="fa-brands fa-whatsapp fa-bounce fa-2xl" style="color: #63E6BE;"></i>
+    </a>
  
 </section>
 <app-trip-plan-popup (planSelected)="onPlanSelected($event)"></app-trip-plan-popup>
@@ -42,4 +47,60 @@
 <div class="w-full h-auto  p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2">
   <!-- Importing services component -->
   <app-services></app-services>
+</div>
+
+<div class="w-full p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] text-[#181E4B] mt-10">
+  <div class="w-full flex justify-between  items-start">
+    <div>
+      <p class="text-orange-500 text-xs"><b>Fast & Easy</b></p>
+      <div class="text-[1.5rem] lg:text-[1.9rem] mb-2 text-[#181E4B]">
+        <b>Get Your Favorite <br> Resort Bookings</b>
+      </div>
+      
+      <div class="mt-5  flex-col gap-5">
+        <div class="flex items-center gap-3">
+          <div>
+            <i class="fa-solid fa-location-dot text-white p-3 rounded-lg bg-yellow-400 row-span-2"></i>
+          </div>
+          <div class="flex-col text-sm justify-start">
+            <p><b>Choose your destination</b></p>
+            <p>Pick your dream destination. Your choice shapes your perfect getaway</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 mt-5">
+          <div>
+            <i class="fa-solid fa-square-check  text-white p-3 rounded-lg bg-orange-600"></i>
+          </div>
+          <div class="flex-col text-sm justify-start">
+            <p><b>Check Availability</b></p>
+            <p>Find your ideal dates. Discover open slots for your perfect stay.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 mt-5">
+          <div>
+            <i class="fa-solid fa-car text-white p-3 rounded-lg bg-blue-600"></i>
+          </div>
+          <div class="flex-col text-sm justify-start">
+            <p><b>Let's Go</b></p>
+            <p>Confirm and book your adventure. Your dream vacation awaits!</p>
+          </div>
+        </div>
+
+        <!-- Book Now Button -->
+        <div class="mt-5 flex justify-center md:hidden">
+          <button class="book-btn  text-white font-bold px-6 py-3 rounded-lg hover:text-orange-600">Book Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="resort hidden md:flex flex-col bg-white shadow-md rounded-xl p-3 hover:scale-110 transition duration-300">
+      <div>
+        <img src="../../../../../assets/images/resort-in-kerala--750x430.webp" class="w-[250px] rounded-xl" alt="">
+      </div>
+      <div>
+        <p class="font-bold text-sm mt-3">Book your resort now</p>
+      </div>
+    </div>
+  </div>
 </div>
