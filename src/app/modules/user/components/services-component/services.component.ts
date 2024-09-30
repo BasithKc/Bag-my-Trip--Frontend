@@ -10,7 +10,7 @@ import { slideInBottom } from "src/app/modules/shared/animations";
 })
 export class ServicesComponent {
     constructor(private cdr: ChangeDetectorRef) {}
-    cardVisibility: Array<boolean> = []
+    cardVisibility: Array<boolean> = [] 
 
     serviceList = [
         {

@@ -10,10 +10,11 @@
             *ngFor="let service of serviceList; let i = index" 
             [@slideInBottom]="cardVisibility[i] ? 'visible' : 'hidden'" 
             (inView)="onCardInView(i, $event)"
-            
-            class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[12rem] flex flex-col p-4 rounded-2xl gap-3 hover:shadow-light_wide"
+            class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[12rem] flex flex-col p-4 rounded-2xl gap-3 relative hover:shadow-light_wide"
         > 
-            <div class="flex items-center justify-center"><img [src]="service.image" class="w-3/5 h-3/5" alt=""></div>
+            <div class="flex items-center justify-center before:absolute before:top-[3.3rem] sm:before:top-[4rem] md:before:top-[4.4rem] before:-z-10 before:left-[4.5rem] md:before:left-[6rem] before:w-9 before:h-8 before:bg-orange-100 before:rounded-lg">
+                <img [src]="service.image" class="w-3/5 h-3/5" alt="">
+            </div>
             <div class="text-sm text-center"><b>{{ service.heading }}</b></div>
             <div class="text-gray-600 text-xs text-center">{{ service.body }}</div>
         </div>
