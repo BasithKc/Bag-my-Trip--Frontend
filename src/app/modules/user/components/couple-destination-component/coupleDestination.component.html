@@ -1,0 +1,32 @@
+<div class="w-full h-auto py-5 flex flex-col gap-5 lg:gap-[4rem] items-end xs:items-center sm:flex-row sm:justify-end md:justify-center sm:pl-3">
+    <div class="py-5 w-full sm:w-3/5 md:w-1/2 max-w-[16.5rem] xs:max-w-[18rem] sm:xs:max-w-[20rem] lg:xs:max-w-[24rem] xs:pl-[3rem]">
+        <div id="imageContainer" class="w-full  flex justify-center" (inView)="onImgView()">
+            <div class="bg-honey_main bg-no-repeat bg-cover bg-center w-full h-[25rem] rounded-t-full relative" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'">
+                <div class="absolute -rotate-90 text-3xl bottom-[8.5rem] left-[-11.2rem] text-gray-200"><b>Honeymoon Packages</b></div>
+                <div class="absolute bg-honey_1 bg-cover bg-center h-[2.8rem] w-[2.8rem] rounded-full left-[5rem] top-[-1.3rem]"></div>
+                <!-- BORDER -->
+                <div class="absolute border-t border-r border-t-slate-700 border-r-slate-500 -z-10 w-full h-[25.5rem] top-[-.5rem] left-[.5rem] rounded-t-full" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'"></div>
+
+                <div class="absolute bg-honey_3 bg-cover bg-center w-[6rem] h-[6rem] md:w-[7rem] md:h-[7rem] left-[-2rem] rounded-full"></div>
+                <div class="absolute bg-honey_2 bg-cover bg-center w-[4rem] h-[4rem] sm:w-[4.5rem] sm:h-[4.5rem] left-[-5rem] top-[8rem] rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <div (inView)="onTextView()" [@slideInLeft]="textAnimation ? 'visible' : 'hidden'" class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start px-7 py-5 text-center sm:text-start gap-3">
+        <div class="text-center sm:text-start text-xs text-orange-500"><b>HONEYMOON SPECIALS</b></div>
+        <div class="text-[1.2rem] text-center sm:text-start mb-2">
+            <b>Our Romantic Tropical Destinations</b>
+        </div>
+        <div>
+            <p>
+                Celebrate your love with a dream honeymoon. 
+                Discover the perfect honeymoon destination with our curated packages. 
+                Enjoy luxurious accommodations, romantic activities, and stunning scenery. 
+                Browse our selection of tropical destinations and book your perfect getaway today.
+            </p>
+        </div>
+        <button class="px-5 mt-2 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 active:scale-95 transition duration-100 ease-in-out">View Packages</button>
+    </div>
+</div>
+
