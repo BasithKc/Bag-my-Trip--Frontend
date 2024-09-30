@@ -11,7 +11,7 @@
             [@slideInBottom]="cardVisibility[i] ? 'visible' : 'hidden'" 
             (inView)="onCardInView(i, $event)"
             
-            class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[15rem] flex flex-col p-4 rounded-2xl gap-3 hover:shadow-light_wide"
+            class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[15rem] flex flex-col p-4 rounded-2xl gap-3 hover:shadow-light_wide border border-gray-300 "
         > 
             <div class="flex items-center justify-center"><img [src]="service.image" class="w-3/5 h-3/5" alt=""></div>
             <div class="text-sm lg:text-lg text-center"><b>{{ service.heading }}</b></div>

@@ -46,3 +46,22 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.banner {
+  background: url("../../../../../assets/images/Rectangle 19294.png");
+  background-size: cover;
+  background-position: center;
+}
+.banner-text {
+  position: relative;
+}
+.banner-text::after {
+  content: "";
+  display: block;
+  background-image: url("../../../../../assets/images/Line-1.png");
+  background-size: 100px 20px;
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+}

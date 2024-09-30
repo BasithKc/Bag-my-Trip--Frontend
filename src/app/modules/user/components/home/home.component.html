@@ -1,7 +1,7 @@
 <section>
   <div class="hero w-full h-[90vh] bg-left p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] flex flex-col justify-center">
     <div>
-      <p class="font-semibold text-3xl md:text-5xl lg:text-6xl  text-white">No matter where <br>you’re going to, <br> we’ll take you there</p>
+      <p class="font-semibold text-3xl md:text-5xl lg:text-5xl  text-white">No matter where <br>you’re going to, <br> we’ll take you there</p>
     </div>
 
       <div class="flex w-full items-center mt-10 text-sm">
@@ -37,7 +37,7 @@
   </div>
 
   <!-- Whatsapp Icon -->
-     <a (click)="openWhatsApp()" class="fixed bottom-10 right-10 lg:bottom-20 lg:right-20 text-[2.3rem] lg:text-[3rem] cursor-pointer">
+     <a (click)="openWhatsApp()" class="fixed bottom-10 right-10 lg:bottom-20 lg:right-20 text-[2.3rem] lg:text-[3rem] cursor-pointer z-[1001]">
       <i class="fa-brands fa-whatsapp fa-bounce fa-2xl" style="color: #63E6BE;"></i>
     </a>
  
@@ -49,8 +49,9 @@
   <app-services></app-services>
 </div>
 
+<!-- Resort Section -->
 <div class="w-full p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] text-[#181E4B] mt-10">
-  <div class="w-full flex justify-between  items-start">
+  <div class="w-full flex justify-between  items-center gap-5">
     <div>
       <p class="text-orange-500 text-xs"><b>Fast & Easy</b></p>
       <div class="text-[1.5rem] lg:text-[1.9rem] mb-2 text-[#181E4B]">
@@ -104,3 +105,9 @@
     </div>
   </div>
 </div>
+
+<!-- Banner -->
+ <div class="w-full banner flex justify-start items-center mt-10 md:mt-20 p-2 md:px-[100px] lg:px-[150px] xl:px-[200px] lg:py-[50px]">
+  <p class="text-white text-xl  lg:text-4xl font-semibold banner-text my-10 leading-10 px-10">Let's Make Your<br> Next Holiday Amazing</p>
+ </div>
+
