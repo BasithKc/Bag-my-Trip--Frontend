@@ -1,0 +1,9 @@
+li a:hover {
+  color: orangered;
+}
+footer {
+  background: url("../../../../../assets/images/Footer img.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto;
+}

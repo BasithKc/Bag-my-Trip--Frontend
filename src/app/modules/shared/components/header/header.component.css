@@ -4,3 +4,9 @@
 #nav ul li:hover {
   color: orangered;
 }
+#menu ul li a:hover {
+  color: orangered;
+}
+#menu ul li {
+  padding: 10px;
+}
