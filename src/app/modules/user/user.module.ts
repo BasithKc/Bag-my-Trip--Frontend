@@ -6,6 +6,7 @@ import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-p
 import { ServicesComponent } from './components/services-component/services.component';
 import { InviewDirective } from '../shared/in-view.directive';
 import { CoupleDestinationComponent } from './components/couple-destination-component/coupleDestination.component';
+import { ExploreBannerComponent } from './components/explore-banner/banner.component';
 
 
 
@@ -15,6 +16,7 @@ import { CoupleDestinationComponent } from './components/couple-destination-comp
     TripPlanPopupComponent,
     ServicesComponent,
     CoupleDestinationComponent,
+    ExploreBannerComponent,
     InviewDirective
   ],
   imports: [
