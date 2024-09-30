@@ -8,7 +8,7 @@
 }
 
 .filter-search {
-  background: rgba(255, 255, 255, 0.774);
+  background: rgba(255, 255, 255, 0.568);
 }
 .plan-btn i {
   animation: move 1s linear infinite;
@@ -24,4 +24,44 @@ p {
   100% {
     transform: translateX(10px);
   }
+}
+
+.resort {
+  position: relative;
+  z-index: 1000;
+  box-shadow: -25px -5px 80px rgba(148, 223, 236, 0.596);
+  cursor: pointer;
+}
+.resort::after {
+  content: url("../../../../../assets/images/Background Element.png");
+  position: absolute;
+  left: -5rem;
+  bottom: -5rem;
+  width: 120px;
+  z-index: -999;
+}
+.book-btn {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../../../../assets/images/resort-in-kerala--750x430.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner {
+  background: url("../../../../../assets/images/Rectangle 19294.png");
+  background-size: cover;
+  background-position: center;
+}
+.banner-text {
+  position: relative;
+}
+.banner-text::after {
+  content: "";
+  display: block;
+  background-image: url("../../../../../assets/images/Line-1.png");
+  background-size: 100px 20px;
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
 }

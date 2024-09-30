@@ -11,7 +11,7 @@ import { InviewDirective } from "src/app/modules/shared/in-view.directive";
 })
 export class ServicesComponent {
     constructor(private cdr: ChangeDetectorRef) {}
-    cardVisibility: Array<boolean> = []
+    cardVisibility: Array<boolean> = [] 
 
     serviceList = [
         {
