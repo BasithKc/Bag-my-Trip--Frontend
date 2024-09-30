@@ -17,6 +17,7 @@ module.exports = {
         "honey_4" : "url(/assets/images/honeymoon/honey-4.png)",
         "nature_img" : "url(/assets/images/banner/nature.jpeg)",
         "international_img" : "url(/assets/images/banner/international.jpeg)",
+        "line_2" : "url(/assets/images/banner/Line-32.png)",
       },
       screens: {
         "xs" : "400px",
