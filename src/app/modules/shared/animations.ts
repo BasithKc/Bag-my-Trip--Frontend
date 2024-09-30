@@ -7,7 +7,7 @@ export const slideInBottom = trigger("slideInBottom", [
     })),
     state("visible", style({
         opacity : 1,
-        transform : 'translateY(0) margin-right(1px)'
+        transform : 'translateY(0)'
     })),
     transition("hidden => visible", [
         animate("1s ease-out")

@@ -1,6 +1,6 @@
 <section>
   <div class="hero w-full h-[90vh] bg-left p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] flex flex-col justify-center" (inView)="onMainBanner()">
-    <div  [@fadeIn]="mainBannerView ? 'visible' : 'hidden'">
+    <div [@fadeIn]="mainBannerView ? 'visible' : 'hidden'">
       <p class="font-semibold text-3xl md:text-5xl lg:text-5xl  text-white">No matter where <br>you’re going to, <br> we’ll take you there</p>
     </div>
 
@@ -24,7 +24,7 @@
               </select>
               <i class="fa-solid fa-chevron-down text-gray-700"></i>
           </div>
-          <button class="bg-orange-500 text-white px-4 py-2 md:py-4 md:px-8 lg:px-10 xl:px-12 rounded-r-lg hover:bg-orange-600 transition duration-300">
+          <button class="transition ease-in-out active:scale-95 bg-orange-500 text-white px-4 py-2 md:py-4 md:px-8 lg:px-10 xl:px-12 rounded-r-lg hover:bg-orange-600 duration-300">
               Submit
           </button>
         </div>
@@ -32,7 +32,7 @@
       </div>
 
       <div class="mt-5" [@slideInLeft]="mainBannerView ? 'visible' : 'hidden'" >
-        <button (click)="openTripPlanPopup()" class="plan-btn shadow-md bg-green-500 text-white px-6 py-2 lg:px-10 lg:py-5 lg:text-lg rounded-r-lg hover:bg-orange-600 transition duration-100">Choose your plan <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="transition ease-in-out active:scale-95 plan-btn shadow-md bg-green-500 text-white px-6 py-2 lg:px-10 lg:py-5 lg:text-lg rounded-r-lg hover:bg-orange-600 duration-300" (click)="openTripPlanPopup()">Choose your plan <i class="fa-solid fa-arrow-right"></i></button>
       </div>
   </div>
 
@@ -105,11 +105,11 @@
 
         <!-- Book Now Button -->
         <div class="mt-5 flex justify-center md:hidden" (inView)="onImage()" [@fadeIn]="imgView ? 'visible' : 'hidden'">
-          <button class="book-btn  text-white font-bold px-6 py-3 rounded-lg hover:text-orange-600">Book Now</button>
+          <button class="transition ease-in-out active:scale-95 duration-300 book-btn  text-white font-bold px-6 py-3 rounded-lg hover:text-orange-600">Book Now</button>
         </div>
       </div>
     </div>
-    <div class="resort hidden md:flex flex-col bg-white shadow-md rounded-xl p-3 hover:scale-110 transition duration-300" (inView)="onImage()">
+    <div class="resort hidden md:flex flex-col bg-white shadow-md rounded-xl p-3 hover:scale-105 active:scale-100 transition duration-300" (inView)="onImage()">
       <div [@fadeIn]="imgView ? 'visible' : 'hidden'">
         <img src="../../../../../assets/images/resort-in-kerala--750x430.webp" class="w-[250px] rounded-xl" alt="">
       </div>

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { TripPlanPopupComponent } from '../trip-plan-popup/trip-plan-popup.component';
+import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-popup.component';
 import { fadeIn, slideInBottom, slideInLeft } from 'src/app/modules/shared/animations';
 
 @Component({
