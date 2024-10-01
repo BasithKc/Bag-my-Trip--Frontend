@@ -1,4 +1,4 @@
-<div class="w-full h-auto py-5 flex flex-col gap-5 lg:gap-[4rem] items-end xs:items-center sm:flex-row sm:justify-end md:justify-center sm:pl-3">
+<div class="w-full h-auto py-5  flex flex-col gap-5 lg:gap-[4rem] items-end xs:items-center sm:flex-row sm:justify-end md:justify-between  sm:pl-3 text-[#181E4B]">
     <div class="py-5 w-full sm:w-3/5 md:w-1/2 max-w-[16.5rem] xs:max-w-[18rem] sm:xs:max-w-[20rem] lg:xs:max-w-[24rem] xs:pl-[3rem]">
         <div id="imageContainer" class="w-full  flex justify-center" (inView)="onImgView()">
             <div class="bg-honey_main bg-no-repeat bg-cover bg-center w-full h-[25rem] rounded-t-full relative" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'">
@@ -15,7 +15,7 @@
 
     <div (inView)="onTextView()" [@slideInLeft]="textAnimation ? 'visible' : 'hidden'" class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start px-7 py-5 text-center sm:text-start gap-3">
         <div class="text-center sm:text-start text-xs text-orange-500"><b>HONEYMOON SPECIALS</b></div>
-        <div class="text-[1.2rem] text-center sm:text-start mb-2">
+        <div class=" text-center sm:text-start mb-2 text-[1.5rem] lg:text-[1.9rem]">
             <b>Our Romantic Tropical Destinations</b>
         </div>
         <div>
