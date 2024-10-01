@@ -15,11 +15,11 @@ module.exports = {
         "honey_2": "url(/assets/images/honeymoon/honey-2.jpeg)",
         "honey_3": "url(/assets/images/honeymoon/honey-3.jpeg)",
         "honey_4": "url(/assets/images/honeymoon/honey-4.png)",
-
-        "kashmir_main": "url(/assets/images/kashmir/kashmir -4.jpg)",
-        "kashmir_1": "url(/assets/images/kashmir/kashmir -1.jpg)",
-        "kashmir_2": "url(/assets/images/kashmir/kashmir -2.jpg)",
-        "kashmir_3": "url(/assets/images/kashmir/kashmir -3.jpg)",
+        "kashmir_main": "url(/assets/images/honeymoon/kashmir-4.jpg)",
+        "kashmir_1": "url(/assets/images/honeymoon/kahsmir-1.jpg)",
+        "kashmir_2": "url(/assets/images/honeymoon/kashmir-2.jpg)",
+        "kashmir_3": "url(/assets/images/honeymoon/kashmir-3.jpg)",
+        "kashmir_5": "url(/assets/images/honeymoon/kashmir-5.webp)",
       },
       screens: {
         "xs": "400px",

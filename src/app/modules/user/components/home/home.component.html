@@ -116,32 +116,20 @@
  </div>
 
  <!-- Kashmir section -->
-  <!-- <div class="p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] lg:py-[50px] text-[#181E4B] mt-10">
-    <div class="flex justify-between items-center gap-5">
-      <div class="flex-col">
-        <p class="text-orange-500 text-xs"><b>PROMOTION</b></p>
-        <p class="text-[1.5rem] lg:text-[1.9rem] mb-2 font-bold">We Provide You Best <br> Kashmir Sightseeing Tours</p>
-        <div>
 
-        </div>
-        <p>Discover the unparalleled beauty of Kashmir with our expertly curated sightseeing tours. From breathtaking landscapes to cultural landmarks, we ensure a journey filled with unforgettable experiences. Let us guide you through the hidden gems and scenic wonders of this paradise on earth!</p>
-      </div>
-    </div>
-  </div> -->
-
-  <div class="w-full h-auto px-5 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2 mt-10">
-    <div class="w-full h-auto py-5  flex flex-col gap-5 lg:gap-[4rem] items-end xs:items-center sm:flex-row sm:justify-end md:justify-between  sm:pl-3 text-[#181E4B]">
-      <div class="py-5 w-full sm:w-3/5 md:w-1/2 max-w-[16.5rem] xs:max-w-[18rem] sm:xs:max-w-[20rem] lg:xs:max-w-[24rem] ">
-          <div id="imageContainer" class="w-full  flex justify-center" (inView)="onImgView()">
+  <div class="w-full h-auto p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2 mt-10">
+    <div class="w-full h-auto py-5  flex flex-col items-center gap-5 lg:gap-[4rem]  xs:items-center sm:flex-row-reverse sm:items-center md:justify-between  sm:pl-3 text-[#181E4B]">
+      <div class="py-5 w-full sm:w-3/5 md:w-1/2 max-w-[16.5rem] xs:max-w-[18rem] sm:xs:max-w-[20rem] lg:xs:max-w-[22rem] ">
+          <div id="imageContainer" class="w-full  flex justify-start" (inView)="onImgView()">
               <div class="bg-kashmir_main bg-no-repeat bg-cover bg-center w-full h-[25rem] rounded-t-full relative" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'">
-                  <div class="absolute -rotate-90 text-3xl bottom-[8.5rem] right-[-11.2rem] text-gray-200"><b>Breath Taking Views</b></div>
+                  <div class="absolute -rotate-90 text-3xl bottom-[8.5rem] right-[-10.2rem] text-gray-200"><b>Breath Taking Views</b></div>
                   <!-- BORDER -->
-                  <div class="absolute border-t border-r border-t-slate-700 border-r-slate-500 -z-10 w-full h-[25.5rem] top-[-.5rem] left-[.5rem] rounded-t-full" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'"></div>
+                  <div class="absolute border-t border-l border-t-slate-700 border-r-slate-500 -z-10 w-full h-[25.5rem] top-[-.5rem] left-[-.5rem] rounded-t-full" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'"></div>
               </div>
           </div>
       </div>
   
-      <div (inView)="onTextView()" [@slideInLeft]="textAnimation ? 'visible' : 'hidden'" class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start px-7 py-5 text-center sm:text-start gap-3">
+      <div (inView)="onTextView()" [@slideInLeft]="textAnimation ? 'visible' : 'hidden'" class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start py-5 text-center sm:text-start gap-3">
           <div class="text-center sm:text-start text-xs text-orange-500"><b>PROMOTION</b></div>
           <div class=" text-center sm:text-start mb-2 text-[1.5rem] lg:text-[1.9rem]">
               <b>We Provide You Best <br> Kashmir Sightseeing Tours</b>
@@ -152,6 +140,13 @@
               </p>
           </div>
           <button class="px-5 mt-2 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 active:scale-95 transition duration-100 ease-in-out">View Packages</button>
+
+          <div class="hidden lg:flex gap-10 lg:gap-20 relative z-10000 mt-10">
+            <div class="bg-kashmir_1 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
+            <div class="bg-kashmir_2 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
+            <div class="bg-kashmir_3 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
+            <div class="bg-kashmir_5 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
+          </div>
       </div>
     </div>
   </div>
