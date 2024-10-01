@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectorRef } from "@angular/core";
 import { fadeIn, slideInBottom, slideInLeft } from "src/app/modules/shared/animations";
-import { TripPlanPopupComponent } from '../trip-plan-popup/trip-plan-popup.component';
+import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-popup.component';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +27,13 @@ import { TripPlanPopupComponent } from '../trip-plan-popup/trip-plan-popup.compo
 })
 export class HomeComponent {
  @ViewChild(TripPlanPopupComponent) tripPlanPopup!: TripPlanPopupComponent
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  iconView = false
+  headView = false
+  imgView = false
+  bannerView = false
+  mainBannerView = false
 
   //  Whatsapp message configuration
   phoneNumber = '9746411628'
@@ -45,7 +52,6 @@ export class HomeComponent {
     window.open(url, '_blank')
   }
 
-  constructor(private cdr: ChangeDetectorRef) {}
     textAnimation: boolean = false
     imgAnimation: boolean = false
 
@@ -58,4 +64,28 @@ export class HomeComponent {
         this.imgAnimation = true
         this.cdr.detectChanges()
     }
+  onIcon(): void {
+    this.iconView = true
+    this.cdr.detectChanges()
+  }
+  
+  onHead(): void {
+    this.headView = true
+    this.cdr.detectChanges()
+  }
+
+  onImage(): void {
+    this.imgView = true
+    this.cdr.detectChanges()
+  }
+
+  onBanner(): void {
+    this.bannerView = true
+    this.cdr.detectChanges()
+  }
+
+  onMainBanner(): void {
+    this.mainBannerView = true
+    this.cdr.detectChanges()
+  }
 }

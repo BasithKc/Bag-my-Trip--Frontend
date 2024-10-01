@@ -1,18 +1,18 @@
 <div *ngIf="showPopup" class="fixed z-1000 inset-0  bg-black  p-10  bg-opacity-50 flex justify-center items-center">
-  <div class="bg-blue-300 text-white p-2 rounded-lg shadow-lg max-w-md  w-full mt-10">
+  <div class="bg-white text-[#181E4B] p-2 rounded-lg shadow-lg max-w-md  w-full mt-10">
     <h2 class="text-2xl font-bold mb-4 text-center">Choose Your Trip</h2>
     <div *ngIf="!selectedTripType" class="space-y-2 ">
       <button  *ngFor="let type of tripTypes" 
               (click)="selectTripType(type)"
-              class="py-2 px-4 w-full font-semibold text-white  rounded uppercase hover:scale-110 shadow-md mt-10 hover:text-orange-600 border-1 border-x-black">
+              class="py-2 px-4 w-full font-semibold  rounded:md uppercase  mt-10 hover:text-white hover:bg-orange-500 border-2 border-gray-300 transition duration-300">
         {{ type }}  
       </button>
     </div>
     <div *ngIf="selectedTripType && !selectedBudget" class="space-y-2">
-      <h3 class="text-xl font-semibold mb-2">Select Your Budget</h3>
+      <h3 class="text-md font-semibold mb-2 text-orange-600">Select Your Budget</h3>
       <button *ngFor="let budget of budgetRanges" 
               (click)="selectBudget(budget)"
-              class="w-full py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300">
+              class="w-full py-2 px-4 border-2 border-gray-300 rounded hover:bg-orange-500 hover:text-white transition duration-300">
         ${{ budget[0] }} - ${{ budget[1] }}
       </button>
     </div>
