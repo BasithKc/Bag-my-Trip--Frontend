@@ -30,14 +30,14 @@ export class ServicesComponent {
             body : "Discover your perfect getaway with our resort booking service. Find your dream vacation spot and book your stay today."
         },
         {
-            image : "/assets/images/services/hands.png",
-            heading : "Religious Tours",
-            body : "Immerse yourself in sacred traditions. Tailored religious tours to match your beliefs. Experience the spiritual beauty of the world."
+            image : "/assets/images/services/train.webp",
+            heading : "Train Tickets",
+            body : "Seamless trian bookings at your fingertips. Find the best deals on trains. Book now and secure your dream vacation."
         },
         {
-            image : "/assets/images/services/medical_team.png",
-            heading : "Medical Insurance",
-            body : "Travel with confidence and peace of mind. Comprehensive medical coverage for any emergency. Easy claims process and 24/7 assistance."
+            image : "/assets/images/services/bus.webp",
+            heading : "Bus Tickets",
+            body : "Seamless bus bookings at your fingertips. Find the best deals on buses. Book now and secure your dream vacation."
         },
     ]
 
