@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Yesteryear&display=swap");
+
+.hero {
+  background-image: url("/assets/images/about/hero.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.text {
+  font-family: "Yesteryear", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.active {
+  display: block;
+}
+.fade {
+  animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

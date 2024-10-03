@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectorRef } from "@angular/core";
-import { fadeIn, slideInBottom, slideInLeft } from "src/app/modules/shared/animations";
+import { fadeIn,slideInLeft } from "src/app/modules/shared/animations";
 import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-popup.component';
 
 @Component({

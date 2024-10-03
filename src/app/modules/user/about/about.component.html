@@ -1,0 +1,86 @@
+<section>
+  <div class="hero w-full h-[60vh] p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] flex flex-col justify-center text-white text-center font-bold">
+    <p>READ</p>
+    <P class="text text-[4.5rem] lg:text-[5.2rem] tracking-wider">about Us<P>
+  </div>
+</section>
+
+
+<div class="w-full h-auto p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2 mt-16 ">
+  <div class="w-full h-auto py-5  flex flex-col items-center gap-10 lg:gap-[4rem]  xs:items-center sm:flex-row-reverse sm:items-center md:justify-between  sm:pl-3">
+    <div class="hidden md:flex bg-kashmir_bg bg-no-repeat bg-cover bg-center py-5 w-full sm:w-3/5 md:w-1/2 max-w-[16.5rem] xs:max-w-[18rem] sm:xs:max-w-[20rem] lg:xs:max-w-[22rem] p-5">
+      <div class="bg-kashmir_1 bg-no-repeat bg-cover bg-center w-full md:h-[17rem] lg:h-[20rem] rounded-full relative">
+      </div>            
+    </div>
+
+    <div  class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start py-5 text-center sm:text-start gap-3 ">
+        <div class="text-center sm:text-start text-xs text-orange-500"><b>PROMOTION</b></div>
+        <div class=" text-center sm:text-start mb-2 text-[1.5rem] lg:text-[1.9rem]">
+            <b>We Provide You Best <br> Kashmir Sightseeing Tours</b>
+        </div>
+        <div class="relative max-w-full m-auto md:hidden">
+
+          <div *ngFor="let slide of slides; let i = index" class="hidden fade" [ngClass]="{'active': i === currentSlide}">
+            <img [src]="slide" class="align-middle rounded-md w-full h-[15rem]">
+          </div>
+        
+        </div>
+        
+        <div class="">
+            <p>
+              Discover the unparalleled beauty of Kashmir with our expertly curated sightseeing tours. From breathtaking landscapes to cultural landmarks, we ensure a journey filled with unforgettable experiences. Let us guide you through the hidden gems and scenic wonders of this paradise on earth!
+            </p>
+        </div>
+        <button class="px-5 mt-2 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 active:scale-95 transition duration-100 ease-in-out">View Packages</button>
+    </div>
+  </div>
+</div>
+
+<!-- International packages section -->
+ <div class="w-full h-auto p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2 mt-16">
+  <div class="flex flex-col items-center">
+    <p class="text-orange-500 text-center sm:text-start text-xs"><b>EXPLORE MORE</b></p>
+    <p class="text-center sm:text-start mb-2 text-[1.5rem] lg:text-[1.9rem] font-bold">Our International Pakages</p>
+    <p class="text-center sm:text-start mb-2 text-[1.1rem] lg:text-[1.5rem] font-semibold text-orange-500">Coming Soon...</p>
+  </div>
+
+  <div class="flex flex-wrap gap-2 md:gap-8 lg:gap-10 justify-center mt-10">
+    <div *ngFor="let package of intPackages" class="relative max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[12rem] lg:max-w-[13rem] xl:max-w-[14rem] group">
+      <img [src]="package.img" class="w-full h-full object-cover transition duration-300 ease-in group-hover:opacity-70 ">
+      <div class="absolute inset-0 flex items-end justify-start pl-10 pb-5 z-20">
+        <p class="text-white font-bold text-md group-hover:text-black">{{package.body}}</p>
+      </div>
+    </div>    
+  </div>
+ </div>
+
+ <div class="bg-clients_bg bg-cover bg-center w-full h-auto p-5 pt-10 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2 mt-20 flex flex-col items-center justify-center">
+  <div class=" w-full text-center mt-10">
+    <p class="text-orange-500 text-xs"><b>PROMOTION</b></p>
+    <p class=" mb-2 text-[1.5rem] lg:text-[1.9rem] font-bold ">See What Our Clients Say <br> About Us</p>
+  </div>
+
+ <div class="w-full flex justify-center items-center bg-white mt-10 relative p-5 mb-10 max-w-[30rem]">
+  <!-- Left Arrow -->
+  <div class="absolute -left-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-white rounded-full p-2 bg-gray-600">
+    <i class="fa-solid fa-arrow-left "></i>
+  </div>
+
+  <!-- Main Content -->
+  <div class="relative flex flex-col items-center mt-10">
+    <div class="absolute top-[-40px] lg:top-[-60px] shadow-lg rounded-full mb-10">
+      <img src="/assets/images/founder.PNG" alt="" class="rounded-full max-w-[75px] border-4 border-white">
+    </div>
+    <div class="p-3 mt-10 text-sm text-center ">
+      <p><i class="fa-solid fa-quote-left fa-2xl mr-2"></i>At Bagmytrip, our passion lies in crafting memorable journeys that go beyond destinations. We aim to be your trusted guide, offering handpicked tour packages across India, and soon, to international locations. Whether you’re exploring the cultural richness of India or dreaming of global adventures, we’re here to make every trip unforgettable.</p>
+      <p class="font-bold mt-3">Mohammed Shakkir - Founder, Bag My Trip</p>
+    </div>
+  </div>
+
+  <!-- Right Arrow -->
+  <div class="absolute -right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-white rounded-full p-2 bg-gray-600">
+    <i class="fa-solid fa-arrow-right"></i>
+  </div>
+</div>
+
+ </div>

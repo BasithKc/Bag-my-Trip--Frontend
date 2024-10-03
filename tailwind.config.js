@@ -21,8 +21,10 @@ module.exports = {
         "kashmir_3": "url(/assets/images/honeymoon/kashmir-3.jpg)",
         "kashmir_5": "url(/assets/images/honeymoon/kashmir-5.webp)",
         "nature_img": "url(/assets/images/banner/nature.jpeg)",
+        "kashmir_bg": "url(/assets/images/about/bgstyle.png)",
         "international_img": "url(/assets/images/banner/international.jpeg)",
         "line_2": "url(/assets/images/banner/Line-32.png)",
+        "clients_bg": "url(/assets/images/about/clients-background.png)"
       },
       screens: {
         "xs": "400px",
