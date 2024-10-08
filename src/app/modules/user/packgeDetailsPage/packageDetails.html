@@ -5,6 +5,47 @@
   </div>
 </section>
 
-<div>
-  
+<div class="container mx-auto px-4 w-full">
+  <div class="flex flex-wrap -mx-4 justify-center">
+    <div class="w-full lg:w-2/3 px-1 mb-8 lg:mb-0">
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden -mt-12">
+        <nav class="flex flex-col sm:flex-row mb-6 bg-gray-100">
+          <div class="flex-1 flex items-center justify-center p-3 sm:p-4 font-bold border-b sm:border-b-0 sm:border-r border-gray-200 cursor-pointer" 
+               [ngClass]="{'active': currentIndex === 0}"
+               (click)="onHeaderItemClick(0)">
+            <i class="fa-solid fa-circle-info mr-2"></i>
+            <a href="/package-details/information" class="text-gray-600 hover:text-gray-900">Information</a>
+          </div>
+          <div class="flex-1 flex items-center justify-center p-3 sm:p-4 font-bold border-b sm:border-b-0 sm:border-r border-gray-200 lg:py-7 cursor-pointer" 
+               [ngClass]="{'active': currentIndex === 1}"
+               (click)="onHeaderItemClick(1)">
+            <i class="fa-solid fa-calendar mr-2"></i>
+            <a href="/package-details/plan" class="text-gray-600 hover:text-gray-900">Tour Plan</a>
+          </div>
+          <div class="flex-1 flex items-center justify-center p-3 sm:p-4 font-bold border-b sm:border-b-0 sm:border-r border-gray-200 lg:py-7 cursor-pointer " 
+               [ngClass]="{'active': currentIndex === 2}"(click)="onHeaderItemClick(2)">
+            <i class="fa-solid fa-location-dot mr-2"></i>
+            <a href="/package-detials/location" class="text-gray-600 hover:text-gray-900">Location</a>
+          </div>
+          <div class="flex-1 flex items-center justify-center p-3 sm:p-4 font-bold cursor-pointer" 
+               [ngClass]="{'active': currentIndex === 3}" (click)="onHeaderItemClick(3)">
+            <i class="fa-solid fa-images mr-2"></i>
+            <a href="/package-details/gallery" class="text-gray-600 hover:text-gray-900">Gallery</a>
+          </div>
+        </nav>
+        <div class="flex flex-col md:flex-row items-start justify-center p-3 md:px-8 w-auto">
+          <router-outlet></router-outlet>
+          <app-booking-form #bookingForm></app-booking-form>
+
+          <!-- Book now butto  -->
+          <div class="flex justify-center fixed bottom-10 left-0 right-0 md:hidden z-10">
+            <button (click)="scrollToBookingForm()" class="book-now-button px-6 py-3 shadow-lg bg-orange-600 text-white rounded-full text-lg font-bold transform transition duration-300 ease-in-out hover:scale-105 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+              Book Now
+            </button>
+      
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
 </div>

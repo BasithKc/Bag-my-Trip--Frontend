@@ -9,6 +9,8 @@ import { CoupleDestinationComponent } from './home/components/couple-destination
 import { ExploreBannerComponent } from './home/components/explore-banner/banner.component';
 import { PackageDetails } from './packgeDetailsPage/packageDetails';
 import { AboutComponent } from './about/about.component';
+import { InfoComponent } from './packgeDetailsPage/components/information/info.component';
+import { BookingComponent } from './packgeDetailsPage/components/bookingForm/booking.component';
 
 
 
@@ -20,6 +22,8 @@ import { AboutComponent } from './about/about.component';
     CoupleDestinationComponent,
     ExploreBannerComponent,
     AboutComponent,
+    InfoComponent,
+    BookingComponent,
     PackageDetails,
     InviewDirective,
   ],
