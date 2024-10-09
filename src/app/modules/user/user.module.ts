@@ -16,11 +16,14 @@ import { BookingComponent } from './packgeDetailsPage/components/bookingForm/boo
 import { TourPlanComponent } from './packgeDetailsPage/components/tourPlan/tour-plan-component';
 import { RouterModule } from '@angular/router';
 import { GalleryComponent } from './packgeDetailsPage/components/gallery/gallery.component';
+import { SharedModule } from '../shared/shared.module';
+import { UserComponent } from './user.component';
 
 
 
 @NgModule({
   declarations: [
+    UserComponent,
     HomeComponent,
     PackageComponent,
     TripPlanPopupComponent,
@@ -40,6 +43,7 @@ import { GalleryComponent } from './packgeDetailsPage/components/gallery/gallery
   imports: [
     CommonModule,
     UserRoutingModule,
+    SharedModule
   ]
 })
 export class UserModule { }

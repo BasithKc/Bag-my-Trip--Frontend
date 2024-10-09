@@ -7,18 +7,24 @@ import { InfoComponent } from "./packgeDetailsPage/components/information/info.c
 import { PackageComponent } from "./package/package.component";
 import { TourPlanComponent } from "./packgeDetailsPage/components/tourPlan/tour-plan-component";
 import { GalleryComponent } from "./packgeDetailsPage/components/gallery/gallery.component";
+import { UserComponent } from "./user.component";
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'package-details', component: PackageDetails,
+  {path: '', component: UserComponent, 
     children: [
-      {path: 'information', component: InfoComponent},
-      {path: 'plan', component: TourPlanComponent},
-      {path: 'gallery', component: GalleryComponent}
+      {path: '', component: HomeComponent},
+      {path: 'package-details', component: PackageDetails,
+        children: [
+          {path: 'information', component: InfoComponent},
+          {path: 'plan', component: TourPlanComponent},
+          {path: 'gallery', component: GalleryComponent}
+        ]
+      },
+      {path: 'about', component: AboutComponent},
+      {path: 'package', component: PackageComponent}
     ]
   },
-  {path: 'about', component: AboutComponent},
-  {path: 'package', component: PackageComponent}
+ 
 ]
 
 @NgModule({
