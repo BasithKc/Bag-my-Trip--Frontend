@@ -1,7 +1,6 @@
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("/assets/images/full-shot-travel-concept-with-landmarks.jpg");
-
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

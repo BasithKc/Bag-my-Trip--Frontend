@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-package-details',
@@ -8,6 +9,8 @@ import { Component, ElementRef, ViewChild } from "@angular/core";
 
 export class PackageDetails {
   @ViewChild('bookingForm', { read: ElementRef }) bookingForm!: ElementRef;
+
+  constructor(private router: Router) {}
 
   currentIndex = 0; // Tracks the active header item
 
@@ -19,6 +22,10 @@ export class PackageDetails {
     if (this.bookingForm && this.bookingForm.nativeElement) {
       this.bookingForm.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  isActive(route: string) {
+    return this.router.url === route
   }
 
 }

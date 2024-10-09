@@ -24,10 +24,14 @@ module.exports = {
         "kashmir_bg": "url(/assets/images/about/bgstyle.png)",
         "international_img": "url(/assets/images/banner/international.jpeg)",
         "line_2": "url(/assets/images/banner/Line-32.png)",
-        "clients_bg": "url(/assets/images/about/clients-background.png)"
+        "clients_bg": "url(/assets/images/about/clients-background.png)",
+        "packageBg_1": "url(/assets/images/package/bg-img.jpeg)",
       },
       screens: {
         "xs": "400px",
+      },
+      width: {
+        "custom": "calc(100% - 3.5rem)"
       }
     },
   },
