@@ -8,8 +8,8 @@ export class SidebarService {
   private isOpenSubject = new BehaviorSubject<boolean>(false);
   isOpen$ = this.isOpenSubject.asObservable();
 
-  toggleSidebar() {
-    this.isOpenSubject.next(!this.isOpenSubject.value);
+  toggleSidebar(value:boolean) {
+    this.isOpenSubject.next(value);
   }
 
   closeSidebar() {

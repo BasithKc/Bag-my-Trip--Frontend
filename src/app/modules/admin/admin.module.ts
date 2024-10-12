@@ -7,6 +7,7 @@ import { HttpClientModule} from "@angular/common/http"
 import { AdminHeaderComponent } from "./components/shared/header/header.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { CommonModule } from "@angular/common";
+import { ToursListingComponent } from "./components/Tours/tours listing/tours-listing.component";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CommonModule } from "@angular/common";
     AdminLayoutComponent,
     AdminHeaderComponent,
     DashboardComponent,
+    ToursListingComponent
   ],
   imports: [
     AdminRoutingModule,

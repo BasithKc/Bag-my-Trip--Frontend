@@ -38,7 +38,7 @@ export class AdminHeaderComponent {
 
   // Checking active for menus
   isActive(route:string) {
-    return this.router.url.includes(route)
+    return this.router.url === route
   }
 
   // Checking for active class in the sub menus of Tour
@@ -54,7 +54,7 @@ export class AdminHeaderComponent {
   // Function for showing menu items for smaller screen
   showMenu ():void {
     this.isShowMenu = !this.isShowMenu
-    this.sidebarService.toggleSidebar()
+    this.sidebarService.toggleSidebar(this.isShowMenu)
   }
 
   isMobileView(): boolean {
