@@ -1,0 +1,21 @@
+.active {
+  background-color: rgb(59 130 246);
+  color: white;
+  position: relative;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #f0f0f1;
+  border-bottom: 10px solid transparent;
+}
+.tour-sub {
+  background: rgba(128, 128, 128, 0.397);
+}
+.toursActive {
+  color: white;
+}

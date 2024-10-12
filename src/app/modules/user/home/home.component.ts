@@ -43,7 +43,7 @@ export class HomeComponent {
   this.tripPlanPopup.openPopup()
  }
 
- onPlanSelected(plan: {type: string, budget: number[]}) {
+ onPlanSelected(plan: {type: string, budget: string}) {
   console.log('selected plain', plan);
   }
 

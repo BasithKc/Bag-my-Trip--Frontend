@@ -31,7 +31,9 @@ module.exports = {
         "xs": "400px",
       },
       width: {
-        "custom": "calc(100% - 3.5rem)"
+        "custom": "calc(100% - 3.5rem)",
+        "content": "calc(100% - 60px)",
+        "sidebar_large": "calc(100% - 230px)",
       }
     },
   },

@@ -6,13 +6,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./trip-plan-popup.component.css']
 })
 export class TripPlanPopupComponent {
-  @Output() planSelected = new EventEmitter<{type: string, budget: number[]}>();
+  @Output() planSelected = new EventEmitter<{type: string, budget: string}>();
 
   showPopup: boolean = false
   tripTypes = ['family', 'solo', 'couple', 'group']
-  budgetRanges = [[10,20], [20,30], [30,40]]
+  budgetRanges = ["Below 10k", "10k-20k", "Above 20k"]
   selectedTripType: string | null = null
-  selectedBudget: number[] | null = null
+  selectedBudget: string | null = null
 
   openPopup() {
     this.showPopup = true
@@ -27,7 +27,7 @@ export class TripPlanPopupComponent {
     this.selectedTripType = type
   }
 
-  selectBudget(budget: number[]) {
+  selectBudget(budget: any) {
     this.selectedBudget = budget
   }
 

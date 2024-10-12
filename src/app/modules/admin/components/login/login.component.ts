@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AuthServiceService } from "../../services/auth-service.service";
+import { AuthServiceService } from "../../services/auth/auth-service.service";
+import {  Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin-login',
@@ -12,7 +13,10 @@ export class LoginComponent implements OnInit{
   loginForm!: FormGroup
   errorMessage: string = ''
 
-  constructor(private fb: FormBuilder, private authService: AuthServiceService) {}
+  constructor(
+    private fb: FormBuilder, 
+    private authService: AuthServiceService,
+    private route: Router  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -24,8 +28,8 @@ export class LoginComponent implements OnInit{
   onSubmit() {  
     if(this.loginForm.valid) {
       this.authService.signin(this.loginForm.value).subscribe(
-        (response) => {
-          console.log(response);        
+        (res) => {
+          this.route.navigate(['/admin'])
         },
         (error) => {
           this.errorMessage = error.error.message
