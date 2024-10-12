@@ -8,6 +8,7 @@ import { AdminHeaderComponent } from "./components/shared/header/header.componen
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { CommonModule } from "@angular/common";
 import { ToursListingComponent } from "./components/Tours/tours listing/tours-listing.component";
+import { AddToursComponent } from "./components/Tours/add tours/add-tours.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ToursListingComponent } from "./components/Tours/tours listing/tours-li
     AdminLayoutComponent,
     AdminHeaderComponent,
     DashboardComponent,
-    ToursListingComponent
+    ToursListingComponent,
+    AddToursComponent
   ],
   imports: [
     AdminRoutingModule,

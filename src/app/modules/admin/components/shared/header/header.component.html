@@ -5,8 +5,8 @@
         <div #menuBtn class=" p-2 md:p-4">
           <i class="fa-solid fa-bars fa-2xl hover:text-blue-300 active:text-blue-300 md:hidden" (click)="showMenu()"></i>
         </div>
-        <div class="flex gap-5 items-center text-xl hover:bg-gray-500 hover:bg-opacity-40 hover:text-blue-300 p-2 md:p-4 relative" (mouseenter)="showHome = true" (mouseleave)="showHome = false">
-          <i class="fa-solid fa-house fa-xl hover:text-blue-300"></i>
+        <div class="flex gap-5 items-center  hover:bg-gray-500 hover:bg-opacity-40 hover:text-blue-300 p-2 md:p-4 relative text-xl md:text-md" (mouseenter)="showHome = true" (mouseleave)="showHome = false">
+          <i class="fa-solid fa-house  hover:text-blue-300"></i>
           <div class="hidden md:block">
             <p >Bag My Trip</p>
           </div>
@@ -45,7 +45,7 @@
         <div class="w-full px-5 py-3 text-lg hover:text-blue-300 hover:border-l-4 hover:border-l-blue-300 cursor-pointer" [ngClass]="{'toursActive': isToursActive('/admin/tours/all')}"[routerLink]="['/admin/tours/all']">
           <p>All Tours</p>
         </div>
-        <div class="w-full px-5 py-3 text-lg hover:text-blue-300 hover:border-l-4 hover:border-l-blue-300 cursor-pointer" [ngClass]="{'toursActive': isToursActive('/admin/tours/add')}">
+        <div class="w-full px-5 py-3 text-lg hover:text-blue-300 hover:border-l-4 hover:border-l-blue-300 cursor-pointer" [ngClass]="{'toursActive': isToursActive('/admin/tours/add')}" [routerLink]="['/admin/tours/add']">
           <p>Add new</p>
         </div>
         <div class="w-full px-5 py-3 text-lg hover:text-blue-300 hover:border-l-4 hover:border-l-blue-300 cursor-pointer" [ngClass]="{'toursActive': isToursActive('/admin/tours/categores')}">

@@ -4,13 +4,14 @@ import { LoginComponent } from "./components/login/login.component";
 import { AdminLayoutComponent } from "./admin-layout.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ToursListingComponent } from "./components/Tours/tours listing/tours-listing.component";
+import { AddToursComponent } from "./components/Tours/add tours/add-tours.component";
 
 const routes: Routes = [
   {path: '', component: AdminLayoutComponent,
     children: [
       {path: '', component: DashboardComponent},
       {path: 'tours/all', component: ToursListingComponent},
-
+      {path: 'tours/add', component: AddToursComponent}
     ]
   },
   {path: 'login', component: LoginComponent}
