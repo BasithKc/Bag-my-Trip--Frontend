@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild } from "@angular/core";
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { SidebarService } from "../../../services/sidebar/sidebar-service.";
 
@@ -8,12 +8,13 @@ import { SidebarService } from "../../../services/sidebar/sidebar-service.";
   styleUrls: ['./header.component.css']
 })
 
-export class AdminHeaderComponent {
+export class AdminHeaderComponent implements OnInit{
   @ViewChild('menuDiv') menuDiv!: ElementRef;
   @ViewChild('menuBtn') menuBtn!: ElementRef
 
   @HostListener('window:resize', ['$event'])
     onResize() {
+      this.screenWidth = window.innerWidth;
       if (this.isMobileView()) {
         this.isShowMenu = false;
         this.sidebarService.closeSidebar()
@@ -29,6 +30,12 @@ export class AdminHeaderComponent {
         }
       }
     }
+    screenWidth!: number;
+
+  ngOnInit() {
+    this.screenWidth = window.innerWidth;
+  }
+
  
   constructor(private router: Router, private sidebarService: SidebarService) {}
 
@@ -60,4 +67,11 @@ export class AdminHeaderComponent {
   isMobileView(): boolean {
     return window.innerWidth < 768; // Now correctly returns true for mobile views
   }
+
+  onMouseEnter() {
+    if (this.screenWidth >= 768 && this.screenWidth < 1024) {
+      this.isTourClicked = !this.isTourClicked;
+    }
+  }
+
 }

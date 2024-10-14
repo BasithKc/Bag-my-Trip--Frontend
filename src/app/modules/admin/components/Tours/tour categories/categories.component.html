@@ -1,0 +1,78 @@
+<div>
+  <div class="flex items-center gap-3">
+    <h1 class="text-3xl ">Tour Categories</h1>
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-10 items-start justify-center">
+    <div class="mt-10 md:w-1/2">
+      <p class="text-xl">Add New Tour Categories</p>
+      <form class="mt-5" [formGroup]="tourCategoryForm" (ngSubmit)="onSubmit()">
+        <mat-form-field  class="w-full h-20 custom-input">
+          <input matInput placeholder="Name" formControlName="name" class="input-text">
+          <mat-error *ngIf="tourCategoryForm.get('name')?.hasError('required')">Name is required</mat-error>
+          <mat-hint>The name is how it appears on your site</mat-hint>
+        </mat-form-field>   
+  
+        <mat-form-field  class="w-full h-20 custom-input mt-8">
+          <input matInput placeholder="Slug" formControlName="slug" class="input-text">
+          <mat-error *ngIf="tourCategoryForm.get('slug')?.hasError('required')">
+            slug is required
+          </mat-error>
+          <mat-hint>The “slug” is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens.</mat-hint>
+        </mat-form-field>  
+  
+        <div class="mt-20 bg-blue-500 text-white px-3 py-3 w-fit  hover:bg-blue-700">
+          <button class="cursor-pointer" type="submit" [disabled]="tourCategoryForm.invalid">Add New Tour Categories</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container mt-8 md:w-1/2">
+      <table class="table-auto w-full hidden md:table"> <!-- Hidden on small screens -->
+        <thead>
+          <tr class="bg-white">
+            <th class="px-4 py-2">Title</th>
+            <th class="px-4 py-2">Slug</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="categories$ | async as categories">
+            <tr class="group" *ngFor="let category of categories; let i = index" [ngClass]="{'bg-white': i % 2 === 1}">
+              <td class="border px-4 py-2 text-blue-400">
+                {{category?.name}}
+                <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p class="cursor-pointer">Edit</p>
+                  <p>|</p>
+                  <p class="text-red-500 cursor-pointer">Trash</p>
+                </div>
+              </td>
+              <td class="border px-4 py-2">{{category?.slug}}</td>
+            </tr>
+            <tr *ngIf="!categories.length">
+              <td class="col-span-2">No categories found</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    
+      <!-- Mobile view -->
+      <div class="block md:hidden">
+        <ng-container *ngIf="categories$ | async as categories">
+          <div *ngFor="let category of categories" class="border mb-4 p-4 bg-white rounded-lg">
+            <h2 class="text-lg font-semibold text-blue-400">{{category?.name}}</h2>
+            <p><span class="font-bold">slug:</span> {{category?.slug}}</p>
+            <div class="flex gap-3 text-sm mt-2">
+              <p class="cursor-pointer">Edit</p>
+              <p>|</p>
+              <p class="text-red-500 cursor-pointer">Trash</p>
+            </div>
+          </div>
+          <div *ngIf="!categories.length" class="border mb-4 p-4 bg-white rounded-lg">
+            <p>No categories found</p>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+</div>

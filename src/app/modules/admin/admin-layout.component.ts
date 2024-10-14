@@ -12,8 +12,6 @@ export class AdminLayoutComponent {
 
   constructor(private sidebarService: SidebarService) {
     sidebarService.isOpen$.subscribe(isOpen => {      
-      console.log(this.isShowMenu);
-      
         this.isShowMenu = isOpen
     })
   }
