@@ -8,7 +8,8 @@ const routes: Routes = [
   {path: 'admin', loadChildren: () => {
     return import('./modules/admin/admin.module')
     .then(m => m.AdminModule)
-  }},
+    },
+  },
   {path: '**', redirectTo: ''},
 
 ];

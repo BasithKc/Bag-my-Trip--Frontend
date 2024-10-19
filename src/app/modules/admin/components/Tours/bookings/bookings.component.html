@@ -1,0 +1,121 @@
+<div class="p-2 md:p-5 lg:p-7 ">
+  <div class="flex items-center gap-3">
+    <p class="text-3xl md:font-medium">Tour Booking</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row md:justify-between md:items-center w-full">
+    <!-- First child: "All (5)" -->
+    <div class="mt-5 text-blue-400 text-lg">
+      <p>All <span class="text-black">(5)</span></p>
+    </div>
+  </div>
+
+  <div class="container mt-8 ">
+    <table class="table-auto w-full hidden md:table"> <!-- Hidden on small screens -->
+      <thead>
+        <tr class="bg-white">
+          <th class="px-4 py-2">Customer</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Phone</th>
+          <th class="px-4 py-2">No. of tickets</th>
+          <th class="px-4 py-2">Tour Destination</th>
+          <th class="px-4 py-2">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="group"> <!-- Added group class here -->
+          <td class="border px-4 py-2 text-blue-400">
+            MUHABBAT
+            <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <p class="cursor-pointer">Edit</p>
+              <p>|</p>
+              <p class="text-red-500 cursor-pointer">Trash</p>
+            </div>
+          </td>
+          <td class="border px-4 py-2">Domestic</td>
+          <td class="border px-4 py-2">Adult Price: ₹17,999<br>Child Price: ₹0</td>
+          <td class="border px-4 py-2">Couple</td>
+          <td class="border px-4 py-2">Multi day</td>
+          <td class="border px-4 py-2">Published<br>2023/07/25 at 9:10 am</td>
+        </tr>
+  
+        <tr class="group bg-white">
+          <td class="border px-4 py-2 text-blue-400">COME EXPLORE HEAVEN
+            <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <p class="cursor-pointer">Edit</p>
+              <p>|</p>
+              <p class="text-red-500 cursor-pointer">Trash</p>
+            </div>
+          </td>
+          <td class="border px-4 py-2">Domestic</td>
+          <td class="border px-4 py-2">Adult Price: ₹4,899<br>Child Price: ₹0</td>
+          <td class="border px-4 py-2">Group</td>
+          <td class="border px-4 py-2">Multi day</td>
+          <td class="border px-4 py-2">Published<br>2023/07/25 at 9:06 am</td>
+        </tr>
+  
+        <tr class="group">
+          <td class="border px-4 py-2 text-blue-400">TOGETHER IN HEAVEN
+            <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <p class="cursor-pointer">Edit</p>
+              <p>|</p>
+              <p class="text-red-500 cursor-pointer">Trash</p>
+            </div>
+          </td>
+          <td class="border px-4 py-2">Domestic</td>
+          <td class="border px-4 py-2">Adult Price: ₹9,999<br>Child Price: ₹0</td>
+          <td class="border px-4 py-2">Group</td>
+          <td class="border px-4 py-2">Multi day</td>
+          <td class="border px-4 py-2">Published<br>2023/07/25 at 9:01 am</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Responsive card layout for smaller screens -->
+    <div class="block md:hidden">
+      <div class="border mb-4 p-4 bg-white rounded-lg">
+        <h2 class="text-lg font-semibold text-blue-400">MUHABBAT</h2>
+        <p><span class="font-bold">Customer:</span> Domestic</p>
+        <p><span class="font-bold">Name:</span> Adult Price: ₹17,999 | Child Price: ₹0</p>
+        <p><span class="font-bold">Phone:</span> Couple</p>
+        <p><span class="font-bold">No. of tickets:</span> Multi day</p>
+        <p><span class="font-bold">Tour Destination</span> Published | 2023/07/25 at 9:10 am</p>
+        <p><span class="font-bold">Date</span> Published | 2023/07/25 at 9:10 am</p>
+        <div class="flex gap-3 text-sm mt-2">
+          <p class="cursor-pointer">Edit</p>
+          <p>|</p>
+          <p class="text-red-500 cursor-pointer">Trash</p>
+        </div>
+      </div>
+      
+      <!-- Repeat for other rows as cards for small screens -->
+      <div class="border mb-4 p-4 bg-white rounded-lg">
+        <h2 class="text-lg font-semibold text-blue-400">COME EXPLORE HEAVEN</h2>
+        <p><span class="font-bold">Type:</span> Domestic</p>
+        <p><span class="font-bold">Price:</span> Adult Price: ₹4,899 | Child Price: ₹0</p>
+        <p><span class="font-bold">Categorie:</span> Group</p>
+        <p><span class="font-bold">Duration:</span> Multi day</p>
+        <p><span class="font-bold">Date:</span> Published | 2023/07/25 at 9:06 am</p>
+        <div class="flex gap-3 text-sm mt-2">
+          <p class="cursor-pointer">Edit</p>
+          <p>|</p>
+          <p class="text-red-500 cursor-pointer">Trash</p>
+        </div>
+      </div>
+      
+      <div class="border mb-4 p-4 bg-white rounded-lg">
+        <h2 class="text-lg font-semibold text-blue-400">TOGETHER IN HEAVEN</h2>
+        <p><span class="font-bold">Type:</span> Domestic</p>
+        <p><span class="font-bold">Price:</span> Adult Price: ₹9,999 | Child Price: ₹0</p>
+        <p><span class="font-bold">Categorie:</span> Group</p>
+        <p><span class="font-bold">Duration:</span> Multi day</p>
+        <p><span class="font-bold">Date:</span> Published | 2023/07/25 at 9:01 am</p>
+        <div class="flex gap-3 text-sm mt-2">
+          <p class="cursor-pointer">Edit</p>
+          <p>|</p>
+          <p class="text-red-500 cursor-pointer">Trash</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

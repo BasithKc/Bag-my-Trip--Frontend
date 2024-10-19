@@ -1,28 +1,22 @@
 <section>
   <div class="hero w-full h-[90vh] bg-left p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] flex flex-col justify-center" (inView)="onMainBanner()">
     <div [@fadeIn]="mainBannerView ? 'visible' : 'hidden'">
-      <p class="font-semibold text-3xl md:text-5xl lg:text-5xl  text-white">No matter where <br>you’re going to, <br> we’ll take you there</p>
+      <p class="font-semibold text-3xl md:text-5xl lg:text-5xl text-white leading-normal md:leading-tight lg:leading-snug">
+        No matter where <br> you’re going to, <br> we’ll take you there
+      </p>
+      
     </div>
 
       <div class="flex w-full items-center mt-10 text-sm" [@slideInLeft]="mainBannerView ? 'visible' : 'hidden'">
         <div class="rounded-lg shadow-md flex items-center filter-search p-2">
           <div class="border-r border-gray-300 p-2  md:p-4 lg:px-6 xl:px-8 flex items-center">
-            <select class="outline-none text-gray-700 bg-transparent appearance-none px-2">
+            <select class="outline-none text-gray-700 bg-transparent appearance-none px-10">
               <option disabled selected>Where to?</option>
               <option>Flight</option>
               <option>Hotel</option>
               <option>Car Rental</option>
             </select>
             <i class="fa-solid fa-chevron-down text-gray-700 text-sm"></i>
-          </div>
-          <div class="border-r border-gray-300 p-2 md:p-4 lg:px-6 xl:px-8 w-auto flex items-center">
-              <select class="outline-none text-gray-700 bg-transparent appearance-none px-2 ">
-                  <option disabled selected>Travel Type </option>
-                  <option>Flight</option>
-                  <option>Hotel</option>
-                  <option>Car Rental</option>
-              </select>
-              <i class="fa-solid fa-chevron-down text-gray-700"></i>
           </div>
           <button class="transition ease-in-out active:scale-95 bg-orange-500 text-white px-4 py-2 md:py-4 md:px-8 lg:px-10 xl:px-12 rounded-r-lg hover:bg-orange-600 duration-300">
               Submit
@@ -65,7 +59,7 @@
     <div>
       <p class="text-orange-500 text-xs" [@fadeIn]="headView ? 'visible' : 'hidden'"><b>Fast & Easy</b></p>
       <div class="text-[1.5rem] lg:text-[1.9rem] mb-2 text-[#181E4B]" (inView)="onHead()" [@fadeIn]="headView ? 'visible' : 'hidden'">
-        <b>Get Your Favorite <br> Resort Bookings</b>
+        <b class="leading-normal md:leading-tight lg:leading-snug">Get Your Favorite <br> Resort Bookings</b>
       </div>
       
       <div class="mt-5  flex-col gap-5" (inView)="onIcon()">
@@ -139,7 +133,7 @@
       <div (inView)="onTextView()" [@slideInLeft]="textAnimation ? 'visible' : 'hidden'" class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start py-5 text-center sm:text-start gap-3">
           <div class="text-center sm:text-start text-xs text-orange-500"><b>PROMOTION</b></div>
           <div class=" text-center sm:text-start mb-2 text-[1.5rem] lg:text-[1.9rem]">
-              <b>We Provide You Best <br> Kashmir Sightseeing Tours</b>
+              <b class="leading-normal md:leading-tight lg:leading-snug">We Provide You Best <br> Kashmir Sightseeing Tours</b>
           </div>
           <div>
               <p>

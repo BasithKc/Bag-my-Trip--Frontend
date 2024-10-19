@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from "@angular/common/http"
 import { Observable, tap } from 'rxjs';
+import {jwtDecode} from 'jwt-decode';
 
+interface DecodedToken {
+  userId: string;
+  exp: number;
+}
 
 interface SignInCredentials {
   userName: string,
@@ -28,4 +33,32 @@ export class AuthServiceService {
         })
       )
   }
+
+  isAuthenticated () {   
+    const token = localStorage.getItem('authToken');
+    if (!token) return false;
+
+    const decoded = this.getDecodedToken();
+    
+    if (!decoded) return false;
+    return decoded?.exp > Date.now() / 1000;
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('authToken');
+  }
+
+  private getDecodedToken(): DecodedToken | null{
+    const token = this.getToken();
+    if (token) {
+      try {        
+        return jwtDecode(token) as DecodedToken
+      } catch (error) {
+        console.error('Failed to decode token', error);
+      }
+    }
+    return null;
+  }
 }
+
+

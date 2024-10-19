@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Yesteryear&display=swap");
+
 html,
 body {
   height: 100%;
@@ -13,4 +15,9 @@ body {
 .success-snackbar {
   position: absolute;
   top: 10%;
+}
+.text {
+  font-family: "Yesteryear", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }

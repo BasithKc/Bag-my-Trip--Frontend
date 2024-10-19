@@ -9,6 +9,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { CommonModule } from "@angular/common";
 import { ToursListingComponent } from "./components/Tours/tours listing/tours-listing.component";
 import { AddToursComponent } from "./components/Tours/add tours/add-tours.component";
+import { BookingComponent } from "../user/packgeDetailsPage/components/bookingForm/booking.component";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AddToursComponent } from "./components/Tours/add tours/add-tours.compon
     DashboardComponent,
     ToursListingComponent,
     AddToursComponent,
+    BookingComponent,
   ],
   imports: [
     AdminRoutingModule,

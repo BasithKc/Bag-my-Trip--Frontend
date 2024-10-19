@@ -2,13 +2,13 @@
     <div class="h-[12rem] xs:h-[14rem] lg:h-[15rem] xl:h-[16rem] relative text-white w-full sm:w-1/2 flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover bg-nature_img" (inView)="onFadeView()">
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="text-sm relative z-10" [@fadeIn]="fadeView ? 'visible' : 'hidden'"><b>PROMOTION</b></div>
-        <div class="text-[1.7rem] relative z-10" [@fadeIn]="fadeView ? 'visible' : 'hidden'"><b>Domestic Packages</b></div>
-        <button class="relative z-10 border mt-2 rounded-md pt-1 pb-2 pl-2 text-sm pr-7 active:scale-95 transition-all duration-300 hover:backdrop-blur-xl hover:border-none" [@slideInBottom]="fadeView ? 'visible' : 'hidden'">View Packages</button>
+        <div class="text-[1.7rem] relative z-10 mt-2" [@fadeIn]="fadeView ? 'visible' : 'hidden'"><b>Domestic Packages</b></div>
+        <button class="relative z-10 border mt-5 rounded-md pt-1 pb-2 pl-2 text-sm pr-7 active:scale-95 transition-all duration-300 hover:backdrop-blur-xl hover:border-none " [@slideInBottom]="fadeView ? 'visible' : 'hidden'">View Packages</button>
     </div>
     <div class="relative h-[12rem] xs:h-[14rem] lg:h-[15rem] xl:h-[16rem] text-white w-full sm:w-1/2 flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover bg-international_img" (inView)="onSlideView()">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="text-sm relative z-10" [@fadeIn]="slideView ? 'visible' : 'hidden'"><b>PROMOTION</b></div>
-        <div class="text-[1.7rem] relative z-10" [@fadeIn]="slideView ? 'visible' : 'hidden'"><b>International Packages</b></div>
-        <button class="relative z-10 border mt-2 rounded-md pt-1 pb-2 pl-2 text-sm pr-7 active:scale-95 hover:border-none hover:backdrop-blur-sm transition-all duration-300" [@slideInBottom]="slideView ? 'visible' : 'hidden'">View Packages</button>
+        <div class="text-[1.7rem] relative z-10 mt-2" [@fadeIn]="slideView ? 'visible' : 'hidden'"><b>International Packages</b></div>
+        <button class="relative z-10 border mt-5 rounded-md pt-1 pb-2 pl-2 text-sm pr-7 active:scale-95 hover:border-none hover:backdrop-blur-sm transition-all duration-300" [@slideInBottom]="slideView ? 'visible' : 'hidden'">View Packages</button>
     </div>
 </div> 

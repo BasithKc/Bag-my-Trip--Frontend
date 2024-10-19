@@ -48,6 +48,11 @@ export class AdminHeaderComponent implements OnInit{
     return this.router.url === route
   }
 
+
+  isIncludeActive(route: string) {
+    return this.router.url.includes(route)
+  }
+
   // Checking for active class in the sub menus of Tour
   isToursActive(route:string) {
     return this.router.url===route

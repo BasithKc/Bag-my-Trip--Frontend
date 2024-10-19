@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit{
     if(this.loginForm.valid) {
       this.authService.signin(this.loginForm.value).subscribe(
         (res) => {
-          this.route.navigate(['/admin'])
+          this.route.navigate(['/admin/dashboard'])
         },
         (error) => {
           this.errorMessage = error.error.message

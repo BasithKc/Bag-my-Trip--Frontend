@@ -20,20 +20,19 @@ form.register {
   height: 420px;
 }
 
-form .text-field {
+form .input-container {
   /* Input fields; Username, Password etc. */
   border: 1px solid #a6a6a6;
   width: 230px;
   height: 40px;
   border-radius: 3px;
   margin-top: 10px;
-  padding-left: 10px;
   color: #6c6c6c;
   background: #fcfcfc;
   outline: none;
 }
 
-form .text-field:focus {
+form .input-container:focus {
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
   color: #a6a6a6;
   background: white;
@@ -55,10 +54,6 @@ form .button {
 
   font-size: 13px;
 }
-
-form .button:hover {
-}
-
 form .button:active {
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3), 0 1px 0 white;
 }

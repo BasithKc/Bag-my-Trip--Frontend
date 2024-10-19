@@ -6,15 +6,19 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ToursListingComponent } from "./components/Tours/tours listing/tours-listing.component";
 import { AddToursComponent } from "./components/Tours/add tours/add-tours.component";
 import { CategoriesComponent } from "./components/Tours/tour categories/categories.component";
+import { AdminGuard } from "./guards/admin.guard";
+import { BookingsComponent } from "./components/Tours/bookings/bookings.component";
 
 const routes: Routes = [
   {path: '', component: AdminLayoutComponent,
     children: [
-      {path: '', component: DashboardComponent},
+      {path: 'dashboard', component: DashboardComponent},
       {path: 'tours/all', component: ToursListingComponent},
       {path: 'tours/add', component: AddToursComponent},
-      {path: 'tours/categories', component: CategoriesComponent}
-    ]
+      {path: 'tours/categories', component: CategoriesComponent},
+      {path: 'tours/bookings', component: BookingsComponent}
+    ],
+    canActivate: [AdminGuard]
   },
   {path: 'login', component: LoginComponent}
 ]
