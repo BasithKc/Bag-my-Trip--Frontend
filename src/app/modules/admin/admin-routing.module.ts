@@ -6,8 +6,9 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ToursListingComponent } from "./components/Tours/tours listing/tours-listing.component";
 import { AddToursComponent } from "./components/Tours/add tours/add-tours.component";
 import { CategoriesComponent } from "./components/Tours/tour categories/categories.component";
+import { TourBookingsComponent } from "./components/Tours/bookings/bookings.component";
+
 import { AdminGuard } from "./guards/admin.guard";
-import { BookingsComponent } from "./components/Tours/bookings/bookings.component";
 
 const routes: Routes = [
   {path: '', component: AdminLayoutComponent,
@@ -16,7 +17,7 @@ const routes: Routes = [
       {path: 'tours/all', component: ToursListingComponent},
       {path: 'tours/add', component: AddToursComponent},
       {path: 'tours/categories', component: CategoriesComponent},
-      {path: 'tours/bookings', component: BookingsComponent}
+      {path: 'tours/bookings', component: TourBookingsComponent}
     ],
     canActivate: [AdminGuard]
   },

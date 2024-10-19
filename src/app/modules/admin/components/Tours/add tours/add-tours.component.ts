@@ -30,6 +30,7 @@ export class AddToursComponent implements OnInit{
     this.addTourForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
+      tripType: ['', Validators.required],
       categories:this.fb.array([]),
       location: ['', Validators.required],
       pricePerPerson: [0, Validators.required],
