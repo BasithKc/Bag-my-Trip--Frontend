@@ -42,6 +42,7 @@ export class AdminHeaderComponent implements OnInit{
   isTourClicked:boolean = false
   isShowMenu:boolean = false
   showHome:boolean=false
+  showLogout: boolean = false
 
   // Checking active for menus
   isActive(route:string) {
@@ -77,6 +78,11 @@ export class AdminHeaderComponent implements OnInit{
     if (this.screenWidth >= 768 && this.screenWidth < 1024) {
       this.isTourClicked = !this.isTourClicked;
     }
+  }
+
+  logout() {
+    localStorage.removeItem('authToken')
+    this.router.navigate(['/admin/login'])
   }
 
 }

@@ -64,7 +64,7 @@
               <input #fileInput type="file" class="hidden" (change)="onFileSelected($event)" accept="image/*">
               
               <div *ngIf="previewUrl" class="mt-2">
-                <img [src]="previewUrl" alt="Preview" class="max-w-full h-auto mb-2">
+                <img [src]="previewUrl" alt="Preview" class="max-w-full h-[250px] mb-2">
                 <button type="button" (click)="removeImage()" class="bg-red-500 text-white px-2 py-1 rounded">Remove Image</button>
               </div>
             </div>
@@ -285,7 +285,7 @@
             <input #fileInput type="file" class="hidden" (change)="onFileSelected($event)" accept="image/*">
             
             <div *ngIf="previewUrl" class="mt-2">
-              <img [src]="previewUrl" alt="Preview" class="max-w-full h-auto mb-2">
+              <img [src]="previewUrl" alt="Preview" class="max-w-full h-[250px] mb-2">
               <button type="button" (click)="removeImage()" class="bg-red-500 text-white px-2 py-1 rounded">Remove Image</button>
             </div>
           </div>

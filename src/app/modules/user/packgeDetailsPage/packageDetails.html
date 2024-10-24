@@ -11,20 +11,20 @@
       <div class="bg-white shadow-lg rounded-lg overflow-hidden -mt-12">
         <nav class="flex flex-col sm:flex-row mb-6 bg-gray-100">
           <div class="flex-1 flex items-center justify-center p-3 sm:p-4 font-bold border-b sm:border-b-0 sm:border-r border-gray-200 cursor-pointer" 
-               [ngClass]="{'active':  isActive('/package-details/information')}">
+               [ngClass]="{'active':  isActive('/package-details/'+tourId + '/information')}">
             <i class="fa-solid fa-circle-info mr-2"></i>
-            <a  [routerLink]="['/package-details/information']" class="text-gray-600 hover:text-gray-900">Information</a>
+            <a  [routerLink]="['/package-details', tourId, 'information']" class="text-gray-600 hover:text-gray-900">Information</a>
           </div>
           <div class="flex-1 flex items-center justify-center p-3 sm:p-4 font-bold border-b sm:border-b-0 sm:border-r border-gray-200 lg:py-7 cursor-pointer" 
-               [ngClass]="{'active': isActive('/package-details/plan')}">
+               [ngClass]="{'active': isActive('/package-details/'+tourId + '/plan')}">
             <i class="fa-solid fa-calendar mr-2"></i>
-            <a [routerLink]="['/package-details/plan']" class="text-gray-600 hover:text-gray-900">Tour Plan</a>
+            <a [routerLink]="['/package-details', tourId, 'plan']" class="text-gray-600 hover:text-gray-900">Tour Plan</a>
           </div>
 
           <div class="flex-1 flex items-center justify-center p-3 sm:p-4 font-bold cursor-pointer" 
-               [ngClass]="{'active': isActive('/package-details/gallery')}" >
+               [ngClass]="{'active': isActive('/package-details/'+tourId + '/gallery')}" >
             <i class="fa-solid fa-images mr-2"></i>
-            <a [routerLink]="['/package-details/gallery']" class="text-gray-600 hover:text-gray-900">Gallery</a>
+            <a [routerLink]="['/package-details', tourId, 'gallery']" class="text-gray-600 hover:text-gray-900">Gallery</a>
           </div>
         </nav>
         <div class="flex flex-col md:flex-row items-start justify-center p-3 md:px-8 w-auto">

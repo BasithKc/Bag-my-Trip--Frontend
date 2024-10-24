@@ -7,7 +7,7 @@
     <div class="flex flex-col md:flex-row md:justify-between md:items-center w-full">
       <!-- First child: "All (5)" -->
       <div class="mt-5 text-blue-400 text-lg">
-        <p>All <span class="text-black">(5)</span></p>
+        <p>All <span class="text-black">({{tours.length}})</span></p>
       </div>
     
       <!-- Second child: Input and Button -->
@@ -32,50 +32,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="group"> <!-- Added group class here -->
+          <tr *ngFor="let tour of tours" class="group"> <!-- Added group class here -->
             <td class="border px-4 py-2 text-blue-400">
-              MUHABBAT
+              {{tour.title}}
               <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                 <p class="cursor-pointer">Edit</p>
                 <p>|</p>
                 <p class="text-red-500 cursor-pointer">Trash</p>
               </div>
             </td>
-            <td class="border px-4 py-2">Domestic</td>
-            <td class="border px-4 py-2">Adult Price: ₹17,999<br>Child Price: ₹0</td>
+            <td class="border px-4 py-2">{{tour.tripType}}</td>
+            <td class="border px-4 py-2">{{tour.pricePerPerson}}</td>
             <td class="border px-4 py-2">Couple</td>
-            <td class="border px-4 py-2">Multi day</td>
-            <td class="border px-4 py-2">Published<br>2023/07/25 at 9:10 am</td>
-          </tr>
-    
-          <tr class="group bg-white">
-            <td class="border px-4 py-2 text-blue-400">COME EXPLORE HEAVEN
-              <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                <p class="cursor-pointer">Edit</p>
-                <p>|</p>
-                <p class="text-red-500 cursor-pointer">Trash</p>
-              </div>
-            </td>
-            <td class="border px-4 py-2">Domestic</td>
-            <td class="border px-4 py-2">Adult Price: ₹4,899<br>Child Price: ₹0</td>
-            <td class="border px-4 py-2">Group</td>
-            <td class="border px-4 py-2">Multi day</td>
-            <td class="border px-4 py-2">Published<br>2023/07/25 at 9:06 am</td>
-          </tr>
-    
-          <tr class="group">
-            <td class="border px-4 py-2 text-blue-400">TOGETHER IN HEAVEN
-              <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                <p class="cursor-pointer">Edit</p>
-                <p>|</p>
-                <p class="text-red-500 cursor-pointer">Trash</p>
-              </div>
-            </td>
-            <td class="border px-4 py-2">Domestic</td>
-            <td class="border px-4 py-2">Adult Price: ₹9,999<br>Child Price: ₹0</td>
-            <td class="border px-4 py-2">Group</td>
-            <td class="border px-4 py-2">Multi day</td>
-            <td class="border px-4 py-2">Published<br>2023/07/25 at 9:01 am</td>
+            <td class="border px-4 py-2">{{tour.duration}}</td>
+            <td class="border px-4 py-2">Published<br>{{tour.publishTime}}</td>
           </tr>
         </tbody>
       </table>

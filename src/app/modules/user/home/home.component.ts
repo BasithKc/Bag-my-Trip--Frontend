@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { ChangeDetectorRef } from "@angular/core";
 import { fadeIn,slideInLeft } from "src/app/modules/shared/animations";
@@ -25,7 +25,7 @@ import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-p
     ]),
 ]
 })
-export class HomeComponent {
+export class HomeComponent{
  @ViewChild(TripPlanPopupComponent) tripPlanPopup!: TripPlanPopupComponent
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -38,6 +38,7 @@ export class HomeComponent {
   //  Whatsapp message configuration
   phoneNumber = '9746411628'
   message = 'Hello, Tell me about your services'
+
  
  openTripPlanPopup  () {
   this.tripPlanPopup.openPopup()

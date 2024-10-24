@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { TourApiService } from "../../../services/tour-api/tour-api.service";
 import { map, Observable } from "rxjs";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-add-tour',
@@ -235,20 +236,38 @@ export class AddToursComponent implements OnInit{
       // Send data to backend
       this.tourApiService.createTour(formData).subscribe(
         response => {
-          console.log('Tour created successfully', response);
-          // Handle success (e.g., show a success message, navigate to tour list)
+          this.showSuccessAlert()
+          this.resetForm()
         },
         error => {
-          console.error('Error creating tour', error);
-          // Handle error (e.g., show an error message to the user)
+          this.showErrorAlert()
         }
       );
     } else {
       console.log('Form is not valid');
-      console.log('Form Values:', this.addTourForm.value);
-      console.log('Form Errors:', this.addTourForm.errors);
-      // Handle invalid form (e.g., show validation errors to the user)
     }
+  }
+
+  showSuccessAlert() {
+    Swal.fire({
+      title: 'Success!',
+      text: 'Tour added successfully!',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+  }
+
+  showErrorAlert() {
+     Swal.fire({
+        title: 'Error!',
+        text: 'Failed to create the tour. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+     });
+   }
+
+  resetForm() {
+    this.addTourForm.reset()
   }
 
 }

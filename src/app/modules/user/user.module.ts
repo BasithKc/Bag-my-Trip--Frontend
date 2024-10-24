@@ -18,6 +18,8 @@ import { RouterModule } from '@angular/router';
 import { GalleryComponent } from './packgeDetailsPage/components/gallery/gallery.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserComponent } from './user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -43,7 +45,9 @@ import { UserComponent } from './user.component';
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }

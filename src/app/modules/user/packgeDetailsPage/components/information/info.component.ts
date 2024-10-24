@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { TourService } from "../../../services/tour.service";
 
 @Component({
   selector: 'app-info',
@@ -12,4 +13,14 @@ import { Component } from "@angular/core";
   `]
 })
 
-export class InfoComponent {}
+export class InfoComponent implements OnInit{
+  tourDetails : any
+
+  constructor(private tourService: TourService){}
+
+  ngOnInit(): void {
+    this.tourService.tourDetails$.subscribe(details => {
+      this.tourDetails = details
+    })
+  }
+}

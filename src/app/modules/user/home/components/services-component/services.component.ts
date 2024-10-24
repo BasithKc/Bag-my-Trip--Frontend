@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component } from "@angular/core";
 import { slideInBottom } from "src/app/modules/shared/animations";
-import { InviewDirective } from "src/app/modules/shared/in-view.directive";
 
 @Component({
     selector : "app-services",

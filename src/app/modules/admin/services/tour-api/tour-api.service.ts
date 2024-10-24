@@ -26,4 +26,8 @@ export class TourApiService {
   createTour(tourData: FormData) {
     return this.http.post(`${this.baseUrl}/create`, tourData)
   }
+
+  getTours(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/get`)
+  }
 }
