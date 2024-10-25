@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from "@angular/common/http"
 import { Observable, tap } from 'rxjs';
 import {jwtDecode} from 'jwt-decode';
+import { Environment } from 'src/app/environments/env';
 
 interface DecodedToken {
   userId: string;
@@ -21,12 +22,12 @@ interface SignInResponse {
   providedIn: 'root'
 })
 export class AuthServiceService {
-  private apiUrl = 'http://localhost:5000/admin/auth'
+  private apiUrl = Environment.baseUrl
 
   constructor(private http: HttpClient) { }
 
   signin(credentials: SignInCredentials) :Observable<SignInResponse> {
-    return this.http.post<SignInResponse>(`${this.apiUrl}/signin`, credentials)
+    return this.http.post<SignInResponse>(`${this.apiUrl}/admin/auth/signin`, credentials)
       .pipe(
         tap(response => {
           localStorage.setItem('authToken', response.token)
