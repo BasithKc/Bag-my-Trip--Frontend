@@ -6,7 +6,7 @@
 
     <div class="flex flex-col md:flex-row md:justify-between md:items-center w-full">
       <!-- First child: "All (5)" -->
-      <div class="mt-5 text-blue-400 text-lg">
+      <div *ngIf="tours$ | async as tours" class="mt-5 text-blue-400 text-lg">
         <p>All <span class="text-black">({{tours.length}})</span></p>
       </div>
     
@@ -31,22 +31,22 @@
             <th class="px-4 py-2">Date</th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let tour of tours" class="group"> <!-- Added group class here -->
-            <td class="border px-4 py-2 text-blue-400">
-              {{tour.title}}
-              <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                <p class="cursor-pointer">Edit</p>
-                <p>|</p>
-                <p class="text-red-500 cursor-pointer">Trash</p>
-              </div>
-            </td>
-            <td class="border px-4 py-2">{{tour.tripType}}</td>
-            <td class="border px-4 py-2">{{tour.pricePerPerson}}</td>
-            <td class="border px-4 py-2">Couple</td>
-            <td class="border px-4 py-2">{{tour.duration}}</td>
-            <td class="border px-4 py-2">Published<br>{{tour.publishTime}}</td>
-          </tr>
+        <tbody *ngIf="tours$ | async as tours">
+            <tr *ngFor="let tour of tours" class="group"> <!-- Added group class here -->
+              <td class="border px-4 py-2 text-blue-400">
+                {{tour.title}}
+                <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p class="cursor-pointer">Edit</p>
+                  <p>|</p>
+                  <p (click)="confirmDelete(tour._id)" class="text-red-500 cursor-pointer">Trash</p>
+                </div>
+              </td>
+              <td class="border px-4 py-2">{{tour.tripType}}</td>
+              <td class="border px-4 py-2">{{tour.pricePerPerson}}</td>
+              <td class="border px-4 py-2">Couple</td>
+              <td class="border px-4 py-2">{{tour.duration}}</td>
+              <td class="border px-4 py-2">Published<br>{{tour.publishTime}}</td>
+            </tr>
         </tbody>
       </table>
     

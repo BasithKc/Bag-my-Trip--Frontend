@@ -1,12 +1,12 @@
 <div class="container mx-auto px-4 w-full">
   <div class="mt-5">
     <div class="flex flex-col sm:flex-row sm:items-center gap-5 mb-4">
-      <p class="text-3xl font-bold text-[#181E4B] mb-2 sm:mb-0">Kashmir</p>
-      <p class=""><span class="text-orange-500 font-bold text-xl">10,000 ₹ /</span>Per Person</p>
+      <p class="text-3xl font-bold text-[#181E4B] mb-2 sm:mb-0">{{tourDetails.title}}</p>
+      <p class=""><span class="text-orange-500 font-bold text-xl">{{tourDetails.pricePerPerson}} ₹ /</span>Per Person</p>
     </div>
 
     <p class="text-gray-700 mb-6 text-sm">
-      Kashmir, often called "Paradise on Earth," offers a breathtaking blend of natural beauty and cultural richness. Visitors can glide across the serene Dal Lake in traditional wooden shikaras, surrounded by majestic Himalayan peaks. The region boasts lush gardens, ancient temples, and bustling markets selling exquisite handicrafts. From skiing in Gulmarg to trekking in Pahalgam, Kashmir provides unforgettable experiences in a landscape of unparalleled beauty.
+      {{tourDetails.description}}
     </p>
 
     <div class="w-full text-sm">
@@ -16,7 +16,7 @@
             <h3 class="font-bold text-orange-500 text-base sm:text-lg">Destination</h3>
           </td>
           <td>
-            <p>: Zurich, Switzerland</p>
+            <p>{{tourDetails.location}}</p>
           </td>
         </tr>
         <tr>

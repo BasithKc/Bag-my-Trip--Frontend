@@ -19,7 +19,7 @@ export class AddToursComponent implements OnInit{
 
   constructor(
     private tourApiService: TourApiService,
-    private fb: FormBuilder 
+    private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -217,10 +217,9 @@ export class AddToursComponent implements OnInit{
       });
 
        // Transform and append itinerary
-      const itineraryArray = this.addTourForm.get('itinerary') as FormArray;
-      const transformedItinerary = itineraryArray.value.map((item: any, index: number) => ({
-        [`day${index + 1}`]: item
-      }));
+       const itineraryArray = this.addTourForm.get('itinerary') as FormArray;
+       const transformedItinerary = itineraryArray.value.map((item:any) => item);
+      
       formData.append('itinerary', JSON.stringify(transformedItinerary));
 
       // Append feature image
@@ -238,6 +237,7 @@ export class AddToursComponent implements OnInit{
         response => {
           this.showSuccessAlert()
           this.resetForm()
+          
         },
         error => {
           this.showErrorAlert()

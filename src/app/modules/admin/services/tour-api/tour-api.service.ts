@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 interface CategoryResponse {
   categories: any[];
@@ -11,6 +12,9 @@ interface CategoryResponse {
 })
 
 export class TourApiService {
+  private toursSubject = new BehaviorSubject<any[]>([]);
+  tours$ = this.toursSubject.asObservable();
+  
   private baseUrl = 'http://localhost:5000/admin/tours';
 
   constructor(private http: HttpClient) {}
@@ -28,6 +32,18 @@ export class TourApiService {
   }
 
   getTours(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/get`)
+    return this.http.get(`${this.baseUrl}/get`).pipe(
+      tap((res: any) => this.toursSubject.next(res.tours))
+    )
+  }
+
+  deleteTour(id:string){
+    return this.http.delete(`${this.baseUrl}/delete/${id}`).pipe(
+      tap(() => {
+        const currentTours = this.toursSubject.value
+        const updatedTours = currentTours.filter(tour => tour._id != id)
+        this.toursSubject.next(updatedTours)
+      })
+    )
   }
 }

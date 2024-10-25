@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import {  Router } from "@angular/router";
 import { TourService } from "../services/tour.service";
 
 @Component({
@@ -13,21 +13,18 @@ export class PackageDetails implements OnInit{
   tourId: any
 
   constructor(
-    private router: Router, 
-    private route: ActivatedRoute,
+    private router: Router,
     private tourService: TourService
   ) {}
 
   currentIndex = 0; // Tracks the active header item
 
   ngOnInit(): void {
-    this.tourId = this.route.snapshot.paramMap.get('tourId') 
-    console.log(this.tourId);
-    
-    if(this.tourId){
-      this.tourService.getTourDetails(parseInt(this.tourId)).subscribe()
-    }
+    this.tourService.tourDetails$.subscribe(tourDetials => {
+      this.tourId = tourDetials._id
+    })
   }
+
 
   onHeaderItemClick(clickedIndex: number) {
       this.currentIndex =clickedIndex;

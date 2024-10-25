@@ -13,7 +13,7 @@ export class GalleryComponent implements OnInit{
 
   ngOnInit(): void {
     this.tourService.tourDetails$.subscribe(details => {
-      this.tourDetails = details
+      this.tourDetails = details.gallery
     })
   }
 }

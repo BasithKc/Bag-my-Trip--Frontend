@@ -10,13 +10,17 @@ export class TourService {
   private tourDetailsSubject = new BehaviorSubject<any>(null)
   tourDetails$ = this.tourDetailsSubject.asObservable();
 
-  private baseUrl = 'https://localhost/5000/user/tours'
+  private baseUrl = 'http://localhost:5000/user/tours'
 
   constructor(private http: HttpClient) {}
 
-  getTourDetails(id:number): Observable<any> {
+  getTourDetails(id:any): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`).pipe(
-      tap(detials => this.tourDetailsSubject.next(detials))
+      tap((res: any) => this.tourDetailsSubject.next(res.tour))
     )
+  }
+
+  getAllTours():Observable<any> {
+    return this.http.get(`${this.baseUrl}/all`)
   }
 }

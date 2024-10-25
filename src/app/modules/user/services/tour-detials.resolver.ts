@@ -10,7 +10,7 @@ export class TourDetailsResolver implements Resolve<any>{
   constructor(private tourService: TourService){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const tourId = route.paramMap.get('tourId')
-    this.tourService.getTourDetails(Number(tourId))
+    const tourId = route.paramMap.get('tourId')    
+    this.tourService.getTourDetails(tourId).subscribe()
   }
 }

@@ -14,6 +14,8 @@ export class TourPlanComponent implements OnInit{
   ngOnInit(): void {
     this.tourService.tourDetails$.subscribe(details => {
       this.tourDetails = details
+      console.log(this.tourDetails);
+      
     })
   }
 }
