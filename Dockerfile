@@ -13,6 +13,6 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf *
 
 # Copy the built angular app from the build stage
-COPY --from=build /app/src .
+COPY --from=build /app/dist/bagmytrip/  .
 EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
