@@ -13,6 +13,7 @@ import { AdminGuard } from "./guards/admin.guard";
 const routes: Routes = [
   {path: '', component: AdminLayoutComponent,
     children: [
+      {path: '', redirectTo: 'dashboard', pathMatch: 'full'}, 
       {path: 'dashboard', component: DashboardComponent},
       {path: 'tours/all', component: ToursListingComponent},
       {path: 'tours/add', component: AddToursComponent},
