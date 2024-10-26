@@ -10,7 +10,7 @@ const routes: Routes = [
     return import('./modules/admin/admin.module')
     .then(m => m.AdminModule)
     },
-    // canActivate: [AdminGuard]  // Add this line
+    canActivate: [AdminGuard]  // Add this line
 
   },
   {path: '**', redirectTo: ''},
