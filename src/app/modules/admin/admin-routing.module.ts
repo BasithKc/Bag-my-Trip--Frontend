@@ -8,8 +8,6 @@ import { AddToursComponent } from "./components/Tours/add tours/add-tours.compon
 import { CategoriesComponent } from "./components/Tours/tour categories/categories.component";
 import { TourBookingsComponent } from "./components/Tours/bookings/bookings.component";
 
-import { AdminGuard } from "./guards/admin.guard";
-
 const routes: Routes = [
   {path: '', component: AdminLayoutComponent,
     children: [
@@ -20,10 +18,8 @@ const routes: Routes = [
       {path: 'tours/categories', component: CategoriesComponent},
       {path: 'tours/bookings', component: TourBookingsComponent}
     ],
-    canActivate: [AdminGuard]
   },
   {path: 'login', component: LoginComponent},
-  {path: '**', redirectTo: ''}
 ]
 
 @NgModule({
