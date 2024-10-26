@@ -10,6 +10,7 @@ RUN npm run build
 # Serve the angular app with nginx
 FROM nginx:1.23-alpine
 WORKDIR /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf  
 RUN rm -rf *
 
 # Copy the built angular app from the build stage

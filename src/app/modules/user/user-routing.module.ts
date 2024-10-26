@@ -27,6 +27,7 @@ const routes: Routes = [
       {path: 'package', component: PackageComponent}
     ]
   },
+  {path: '**', redirectTo: ''}
  
 ]
 
