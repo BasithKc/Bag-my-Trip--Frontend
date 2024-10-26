@@ -10,10 +10,11 @@ RUN npm run build
 # Serve the angular app with nginx
 FROM nginx:1.23-alpine
 WORKDIR /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf  
-RUN rm -rf *
-
-# Copy the built angular app from the build stage
-COPY --from=build /app/dist/bag-my-trip-frontend/  .
+# Remove default nginx static files
+RUN rm -rf ./*
+# Copy nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy built angular files
+COPY --from=build /app/dist/bag-my-trip-frontend/ .
 EXPOSE 80
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
