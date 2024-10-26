@@ -26,6 +26,6 @@ jobs:
       - name: Pull image from dockerhub
         run: docker pull basith7618/angular-app:latest
       - name: Delete old container
-        run: docker rm -f angular-app-container
+        run: docker rm -f basith7618/angular-app
       - name: Run docker container
         run: docker run -d -p 4200:80 --name angular-app-container  basith7618/angular-app
