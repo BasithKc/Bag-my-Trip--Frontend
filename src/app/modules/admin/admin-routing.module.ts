@@ -7,9 +7,13 @@ import { ToursListingComponent } from "./components/Tours/tours listing/tours-li
 import { AddToursComponent } from "./components/Tours/add tours/add-tours.component";
 import { CategoriesComponent } from "./components/Tours/tour categories/categories.component";
 import { TourBookingsComponent } from "./components/Tours/bookings/bookings.component";
+import { AdminGuard } from "./guards/admin.guard";
 
 const routes: Routes = [
-  {path: '', component: AdminLayoutComponent,
+  {
+    path: 'admin', 
+    canActivate: [AdminGuard],
+    component: AdminLayoutComponent,    
     children: [
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'}, 
       {path: 'dashboard', component: DashboardComponent},
