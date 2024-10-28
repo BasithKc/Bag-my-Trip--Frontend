@@ -8,7 +8,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AdminRoutingModule } from './modules/admin/admin-routing.module';
+import { AdminModule } from './modules/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -16,12 +16,11 @@ import { AdminRoutingModule } from './modules/admin/admin-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CommonModule,
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AdminRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

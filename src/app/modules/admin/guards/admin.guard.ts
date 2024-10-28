@@ -11,6 +11,7 @@ export class AdminGuard implements CanActivate{
   constructor(private authService: AuthServiceService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    console.log('AdminGuard executing');
     if(this.authService.isAuthenticated()){
       return true
     } else {

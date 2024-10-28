@@ -10,20 +10,19 @@ import { TourBookingsComponent } from "./components/Tours/bookings/bookings.comp
 import { AdminGuard } from "./guards/admin.guard";
 
 const routes: Routes = [
-  {
-    path: 'admin', 
+  {path: 'login', component: LoginComponent},
+  {path: '', component: AdminLayoutComponent,
     canActivate: [AdminGuard],
-    component: AdminLayoutComponent,    
     children: [
-      {path: '', redirectTo: 'dashboard', pathMatch: 'full'}, 
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {path: 'dashboard', component: DashboardComponent},
       {path: 'tours/all', component: ToursListingComponent},
       {path: 'tours/add', component: AddToursComponent},
       {path: 'tours/categories', component: CategoriesComponent},
-      {path: 'tours/bookings', component: TourBookingsComponent}
+      {path: 'tours/bookings', component: TourBookingsComponent},
     ],
   },
-  {path: 'login', component: LoginComponent},
+  { path: '**', redirectTo: 'dashboard' } 
 ]
 
 @NgModule({
