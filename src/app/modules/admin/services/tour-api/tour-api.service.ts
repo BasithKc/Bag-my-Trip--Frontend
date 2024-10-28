@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import { Environment } from 'src/app/environments/env';
 
 interface CategoryResponse {

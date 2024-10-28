@@ -36,7 +36,7 @@ export class HomeComponent{
   mainBannerView = false
 
   //  Whatsapp message configuration
-  phoneNumber = '8943639725'
+  phoneNumber = '+918943639725'
   message = 'Hello, Tell me about your services'
 
  

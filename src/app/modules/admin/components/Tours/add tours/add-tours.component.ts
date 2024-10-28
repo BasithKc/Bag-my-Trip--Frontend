@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { TourApiService } from "../../../services/tour-api/tour-api.service";
 import { map, Observable } from "rxjs";
 import Swal from "sweetalert2";
@@ -32,6 +32,8 @@ export class AddToursComponent implements OnInit{
       title: ['', Validators.required],
       description: ['', Validators.required],
       tripType: ['', Validators.required],
+      includes: this.fb.array([]),
+      excludes: this.fb.array([]),
       categories:this.fb.array([]),
       location: ['', Validators.required],
       pricePerPerson: [0, Validators.required],
@@ -60,6 +62,41 @@ export class AddToursComponent implements OnInit{
         console.log('Cannot load categories', error);
       }
     );
+  }
+  includeControl = new FormControl('', [Validators.required, Validators.minLength(1)]);
+  excludeControl = new FormControl('', [Validators.required, Validators.minLength(1)]);
+
+
+    // Getters for easy access
+    get includes() {
+      return this.addTourForm.get('includes') as FormArray;
+    }
+  
+    get excludes() {
+      return this.addTourForm.get('excludes') as FormArray;
+    }
+
+      // Methods to add/remove items
+  addInclude() {
+    if (this.includeControl.valid) {
+      this.includes.push(this.fb.control(this.includeControl.value));
+      this.includeControl.reset();
+    }
+  }
+
+  removeInclude(index: number) {
+    this.includes.removeAt(index);
+  }
+
+  addExclude() {
+    if (this.excludeControl.valid) {
+      this.excludes.push(this.fb.control(this.excludeControl.value));
+      this.excludeControl.reset();
+    }
+  }
+
+  removeExclude(index: number) {
+    this.excludes.removeAt(index);
   }
 
   featureImageFile: File | null = null
@@ -197,9 +234,23 @@ export class AddToursComponent implements OnInit{
 
       // Append basic form fields
       Object.keys(this.addTourForm.value).forEach(key => {
-        if (key !== 'categories' && key !== 'itinerary' && key !== 'hotel' && key !== 'cabin') {
+        if (key !== 'categories' && key !== 'itinerary' && key !== 'hotel' && key !== 'cabin' && key !=='includes' && key !== 'excludes') {
           formData.append(key, this.addTourForm.get(key)?.value);
         }
+      });
+
+      // Get the includes and excludes from your form
+      const includesArray = this.includes.value;
+      const excludesArray = this.excludes.value; 
+      
+      // Append each include value separately with the same key name
+      includesArray.forEach((value: string) => {
+        formData.append('includes[]', value);
+      });
+      
+      // Append each exclude value separately with the same key name
+      excludesArray.forEach((value: string) => {
+        formData.append('excludes[]', value);
       });
 
       // Append categories
