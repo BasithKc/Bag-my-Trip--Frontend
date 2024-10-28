@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
+# Add build timestamp to force rebuild
+RUN echo "Build timestamp: $(date)" > build-time.txt
 RUN npm run build
 
 # Serve the angular app with nginx
@@ -16,5 +18,7 @@ RUN rm -rf ./*
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy built angular files
 COPY --from=build /app/dist/bag-my-trip-frontend/ .
+# Add build info
+COPY --from=build /app/build-time.txt /usr/share/nginx/html/
 EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
