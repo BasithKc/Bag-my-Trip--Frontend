@@ -8,6 +8,7 @@ import { AddToursComponent } from "./components/Tours/add tours/add-tours.compon
 import { CategoriesComponent } from "./components/Tours/tour categories/categories.component";
 import { TourBookingsComponent } from "./components/Tours/bookings/bookings.component";
 import { AdminGuard } from "./guards/admin.guard";
+import { EditTourComponent } from "./components/Tours/edit tour/edit-tour.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -16,10 +17,13 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {path: 'dashboard', component: DashboardComponent},
-      {path: 'tours/all', component: ToursListingComponent},
-      {path: 'tours/add', component: AddToursComponent},
-      {path: 'tours/categories', component: CategoriesComponent},
-      {path: 'tours/bookings', component: TourBookingsComponent},
+      {path: 'tours' , children: [
+        {path: 'all', component: ToursListingComponent},
+        {path: 'add', component: AddToursComponent},
+        {path: 'categories', component: CategoriesComponent},
+        {path: 'bookings', component: TourBookingsComponent},
+        {path: 'edit/:id', component: EditTourComponent}
+      ]},
     ],
   },
   { path: '**', redirectTo: 'dashboard' } 

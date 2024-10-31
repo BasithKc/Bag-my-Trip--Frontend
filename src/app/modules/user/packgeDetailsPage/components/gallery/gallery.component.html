@@ -1,7 +1,7 @@
 <div class="max-w-7xl mx-auto">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       <!-- Left column -->
-      <div class="space-y-4 order-1 sm:order-1">
+      <div *ngIf="tourDetails" class="space-y-4 order-1 sm:order-1">
           <img *ngFor="let tour of tourDetails" [src]="tour" class="w-full h-40 object-cover ">
       </div>
       
@@ -17,7 +17,7 @@
   </div>
   
   <!-- Pagination -->
-  <div class="flex justify-center items-center space-x-2 mt-6">
+  <!-- <div class="flex justify-center items-center space-x-2 mt-6">
       <button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100">
           &lt;
       </button>
@@ -28,5 +28,5 @@
       <button class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100">
           &gt;
       </button>
-  </div>
+  </div> -->
 </div>

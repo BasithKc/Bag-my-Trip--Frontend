@@ -10,6 +10,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule} from "@angular/common/http"
 import { CommonModule } from "@angular/common";
+import { EditTourComponent } from "./components/Tours/edit tour/edit-tour.component"
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CommonModule } from "@angular/common";
     AdminHeaderComponent,
     ToursListingComponent,
     AddToursComponent,
-    TourBookingsComponent
+    TourBookingsComponent,
+    EditTourComponent
   ],
   imports: [
     AdminRoutingModule,

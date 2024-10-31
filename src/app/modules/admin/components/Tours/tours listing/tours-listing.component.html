@@ -36,7 +36,7 @@
               <td class="border px-4 py-2 text-blue-400">
                 {{tour.title}}
                 <div class="flex gap-3 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p class="cursor-pointer">Edit</p>
+                  <a [routerLink]="['/admin/tours/edit', tour._id]" class="cursor-pointer">Edit</a>
                   <p>|</p>
                   <p (click)="confirmDelete(tour._id)" class="text-red-500 cursor-pointer">Trash</p>
                 </div>

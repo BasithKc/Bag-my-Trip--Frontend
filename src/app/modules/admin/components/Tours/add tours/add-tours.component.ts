@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { TourApiService } from "../../../services/tour-api/tour-api.service";
-import { map, Observable } from "rxjs";
 import Swal from "sweetalert2";
 
 @Component({

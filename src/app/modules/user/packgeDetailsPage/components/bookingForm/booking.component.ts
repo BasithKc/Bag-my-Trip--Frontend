@@ -18,16 +18,16 @@ export class BookingComponent implements OnInit{
     private tourService: TourService) {}
 
   ngOnInit(): void {
+    this.tourService.tourDetails$.subscribe(detials => {
+      this.tourDetails = detials
+    })
+
     this.bookingForm = this.fb.group({
       name: ['', Validators.required],
       phone: ['', Validators.required],
       tickets: [0, Validators.required],
       tourId:[this.tourDetails._id, Validators.required]
-    })
-    this.tourService.tourDetails$.subscribe(detials => {
-      this.tourDetails = detials
-    })
-    
+    })  
   }
 
   onSubmit() {

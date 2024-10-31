@@ -11,6 +11,6 @@ export class TourDetailsResolver implements Resolve<any>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const tourId = route.paramMap.get('tourId')    
-    this.tourService.getTourDetails(tourId).subscribe()
+    return this.tourService.getTourDetails(tourId)
   }
 }

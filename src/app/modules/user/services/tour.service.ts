@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable, tap } from "rxjs";
+import { BehaviorSubject, catchError, map, Observable, tap, throwError } from "rxjs";
 import { Environment } from "src/app/environments/env";
 
 @Injectable({
@@ -15,10 +15,15 @@ export class TourService {
 
   constructor(private http: HttpClient) {}
 
-  getTourDetails(id:any): Observable<any> {
+  getTourDetails(id:any) {
     return this.http.get(`${this.baseUrl}/user/tours/${id}`).pipe(
-      tap((res: any) => this.tourDetailsSubject.next(res.tour))
-    )
+      map((res: any) => res.tour),
+      tap(tour => this.tourDetailsSubject.next(tour)),
+      catchError(error => {
+        console.error('Error fetching tour details:', error);
+        return throwError(() => error);
+      })
+    );
   }
 
   getAllTours():Observable<any> {

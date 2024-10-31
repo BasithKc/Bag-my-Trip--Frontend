@@ -46,4 +46,12 @@ export class TourApiService {
       })
     )
   }
+
+  getTourById(id:string) {
+    return this.http.get(`${this.baseUrl}/admin/tours/${id}`)
+  }
+
+  updateTour(id: string, form: FormData): Observable<any> {
+    return this.http.put(`${this.baseUrl}/admin/tours/update/${id}`, form)
+  }
 }
