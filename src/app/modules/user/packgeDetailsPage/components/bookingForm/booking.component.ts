@@ -11,6 +11,7 @@ import { TourService } from "../../../services/tour.service";
 export class BookingComponent implements OnInit{
   bookingForm!: FormGroup 
   tourDetails: any
+  successMsg!: string
 
   constructor(
     private fb: FormBuilder, 
@@ -31,12 +32,15 @@ export class BookingComponent implements OnInit{
   }
 
   onSubmit() {
-    console.log(this.bookingForm.value);
     
     if(this.bookingForm.valid){
       this.bookService.bookTour(this.bookingForm.value).subscribe(
         res => {
-          console.log(res);
+          this.successMsg = res.message
+          this.bookingForm.reset()
+          setTimeout(() => {
+            this.successMsg = ''
+          }, 3000);
         },
         error => {
           console.log(error);
