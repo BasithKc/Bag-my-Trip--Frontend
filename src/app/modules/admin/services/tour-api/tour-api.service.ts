@@ -54,4 +54,8 @@ export class TourApiService {
   updateTour(id: string, form: FormData): Observable<any> {
     return this.http.put(`${this.baseUrl}/admin/tours/update/${id}`, form)
   }
+
+  getTourBookings():Observable<any> {
+    return this.http.get(`${this.baseUrl}/admin/tours/bookings`)
+  }
 }

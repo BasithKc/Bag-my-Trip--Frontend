@@ -28,7 +28,9 @@
           </div>
         </nav>
         <div class="flex flex-col md:flex-row items-start justify-center p-3 md:px-8 w-auto">
-          <router-outlet></router-outlet>
+          <div class="max-w-[65%]">
+            <router-outlet></router-outlet>
+          </div>
           <app-booking-form #bookingForm></app-booking-form>
 
           <!-- Book now button  -->

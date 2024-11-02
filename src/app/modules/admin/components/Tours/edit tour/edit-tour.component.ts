@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 })
 
 export class EditTourComponent implements OnInit{
-  @ViewChild('filInput') fileInput!: ElementRef<HTMLInputElement>
+  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>
   
   editTourForm!: FormGroup
   tourId!: string 
