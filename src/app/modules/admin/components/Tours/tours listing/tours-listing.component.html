@@ -52,8 +52,8 @@
       <div class="block md:hidden" *ngIf="tours$ | async as tours">
         <div *ngFor="let tour of tours" class="border mb-4 p-4 bg-white rounded-lg">
           <h2 class="text-lg font-semibold text-blue-400">{{tour.title}}</h2>
-          <p><span class="font-bold">Type:</span> {{tour.type}}</p>
-          <p><span class="font-bold">Price:</span> {{tour.price}}</p>
+          <p><span class="font-bold">Type:</span> {{tour.tripType}}</p>
+          <p><span class="font-bold">Price:</span> {{tour.pricePerPerson}}</p>
           <p><span class="font-bold">Duration:</span> {{tour.duration}}</p>
           <p><span class="font-bold">Date:</span> Published {{tour.publishTime | date: 'medium'}}</p>
           <div class="flex gap-3 text-sm mt-2">
