@@ -16,7 +16,7 @@ export class TourService {
   constructor(private http: HttpClient) {}
 
   getTourDetails(id:any) {
-    return this.http.get(`${this.baseUrl}/user/tours/${id}`).pipe(
+    return this.http.get(`${this.baseUrl}/api/user/tours/${id}`).pipe(
       map((res: any) => res.tour),
       tap(tour => this.tourDetailsSubject.next(tour)),
       catchError(error => {
@@ -27,6 +27,6 @@ export class TourService {
   }
 
   getAllTours():Observable<any> {
-    return this.http.get(`${this.baseUrl}/user/tours/all`)
+    return this.http.get(`${this.baseUrl}/api/user/tours/all`)
   }
 }
