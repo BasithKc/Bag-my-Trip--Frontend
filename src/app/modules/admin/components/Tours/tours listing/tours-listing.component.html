@@ -26,7 +26,6 @@
             <th class="px-4 py-2">Title</th>
             <th class="px-4 py-2">Type</th>
             <th class="px-4 py-2">Price</th>
-            <th class="px-4 py-2">Category</th>
             <th class="px-4 py-2">Duration</th>
             <th class="px-4 py-2">Date</th>
           </tr>
@@ -43,55 +42,24 @@
               </td>
               <td class="border px-4 py-2">{{tour.tripType}}</td>
               <td class="border px-4 py-2">{{tour.pricePerPerson}}</td>
-              <td class="border px-4 py-2">Couple</td>
               <td class="border px-4 py-2">{{tour.duration}}</td>
-              <td class="border px-4 py-2">Published<br>{{tour.publishTime}}</td>
+              <td class="border px-4 py-2">Published<br>{{tour.publishTime | date:'medium'}}</td>
             </tr>
         </tbody>
       </table>
     
       <!-- Responsive card layout for smaller screens -->
-      <div class="block md:hidden">
-        <div class="border mb-4 p-4 bg-white rounded-lg">
-          <h2 class="text-lg font-semibold text-blue-400">MUHABBAT</h2>
-          <p><span class="font-bold">Type:</span> Domestic</p>
-          <p><span class="font-bold">Price:</span> Adult Price: ₹17,999 | Child Price: ₹0</p>
-          <p><span class="font-bold">Categories:</span> Couple</p>
-          <p><span class="font-bold">Duration:</span> Multi day</p>
-          <p><span class="font-bold">Date:</span> Published | 2023/07/25 at 9:10 am</p>
+      <div class="block md:hidden" *ngIf="tours$ | async as tours">
+        <div *ngFor="let tour of tours" class="border mb-4 p-4 bg-white rounded-lg">
+          <h2 class="text-lg font-semibold text-blue-400">{{tour.title}}</h2>
+          <p><span class="font-bold">Type:</span> {{tour.type}}</p>
+          <p><span class="font-bold">Price:</span> {{tour.price}}</p>
+          <p><span class="font-bold">Duration:</span> {{tour.duration}}</p>
+          <p><span class="font-bold">Date:</span> Published {{tour.publishTime | date: 'medium'}}</p>
           <div class="flex gap-3 text-sm mt-2">
-            <p class="cursor-pointer">Edit</p>
+            <p class="cursor-pointer" [routerLink]="['/admin/tours/edit', tour._id]">Edit</p>
             <p>|</p>
-            <p class="text-red-500 cursor-pointer">Trash</p>
-          </div>
-        </div>
-        
-        <!-- Repeat for other rows as cards for small screens -->
-        <div class="border mb-4 p-4 bg-white rounded-lg">
-          <h2 class="text-lg font-semibold text-blue-400">COME EXPLORE HEAVEN</h2>
-          <p><span class="font-bold">Type:</span> Domestic</p>
-          <p><span class="font-bold">Price:</span> Adult Price: ₹4,899 | Child Price: ₹0</p>
-          <p><span class="font-bold">Categories:</span> Group</p>
-          <p><span class="font-bold">Duration:</span> Multi day</p>
-          <p><span class="font-bold">Date:</span> Published | 2023/07/25 at 9:06 am</p>
-          <div class="flex gap-3 text-sm mt-2">
-            <p class="cursor-pointer">Edit</p>
-            <p>|</p>
-            <p class="text-red-500 cursor-pointer">Trash</p>
-          </div>
-        </div>
-        
-        <div class="border mb-4 p-4 bg-white rounded-lg">
-          <h2 class="text-lg font-semibold text-blue-400">TOGETHER IN HEAVEN</h2>
-          <p><span class="font-bold">Type:</span> Domestic</p>
-          <p><span class="font-bold">Price:</span> Adult Price: ₹9,999 | Child Price: ₹0</p>
-          <p><span class="font-bold">Categories:</span> Group</p>
-          <p><span class="font-bold">Duration:</span> Multi day</p>
-          <p><span class="font-bold">Date:</span> Published | 2023/07/25 at 9:01 am</p>
-          <div class="flex gap-3 text-sm mt-2">
-            <p class="cursor-pointer">Edit</p>
-            <p>|</p>
-            <p class="text-red-500 cursor-pointer">Trash</p>
+            <p (click)="confirmDelete(tour._id)"  class="text-red-500 cursor-pointer">Trash</p>
           </div>
         </div>
       </div>

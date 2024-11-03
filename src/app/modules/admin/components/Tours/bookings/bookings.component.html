@@ -35,43 +35,12 @@
   
     <!-- Responsive card layout for smaller screens -->
     <div class="block md:hidden">
-      <div class="border mb-4 p-4 bg-white rounded-lg">
-        <h2 class="text-lg font-semibold text-blue-400">MUHABBAT</h2>
-        <p><span class="font-bold">Customer:</span> Domestic</p>
-        <p><span class="font-bold">Name:</span> Adult Price: ₹17,999 | Child Price: ₹0</p>
-        <p><span class="font-bold">Phone:</span> Couple</p>
-        <p><span class="font-bold">No. of tickets:</span> Multi day</p>
-        <p><span class="font-bold">Tour Destination</span> Published | 2023/07/25 at 9:10 am</p>
-        <p><span class="font-bold">Date</span> Published | 2023/07/25 at 9:10 am</p>
-        <div class="flex gap-3 text-sm mt-2">
-          <p class="cursor-pointer">Edit</p>
-          <p>|</p>
-          <p class="text-red-500 cursor-pointer">Trash</p>
-        </div>
-      </div>
-      
-      <!-- Repeat for other rows as cards for small screens -->
-      <div class="border mb-4 p-4 bg-white rounded-lg">
-        <h2 class="text-lg font-semibold text-blue-400">COME EXPLORE HEAVEN</h2>
-        <p><span class="font-bold">Type:</span> Domestic</p>
-        <p><span class="font-bold">Price:</span> Adult Price: ₹4,899 | Child Price: ₹0</p>
-        <p><span class="font-bold">Categorie:</span> Group</p>
-        <p><span class="font-bold">Duration:</span> Multi day</p>
-        <p><span class="font-bold">Date:</span> Published | 2023/07/25 at 9:06 am</p>
-        <div class="flex gap-3 text-sm mt-2">
-          <p class="cursor-pointer">Edit</p>
-          <p>|</p>
-          <p class="text-red-500 cursor-pointer">Trash</p>
-        </div>
-      </div>
-      
-      <div class="border mb-4 p-4 bg-white rounded-lg">
-        <h2 class="text-lg font-semibold text-blue-400">TOGETHER IN HEAVEN</h2>
-        <p><span class="font-bold">Type:</span> Domestic</p>
-        <p><span class="font-bold">Price:</span> Adult Price: ₹9,999 | Child Price: ₹0</p>
-        <p><span class="font-bold">Categorie:</span> Group</p>
-        <p><span class="font-bold">Duration:</span> Multi day</p>
-        <p><span class="font-bold">Date:</span> Published | 2023/07/25 at 9:01 am</p>
+      <div  *ngFor="let book of tourBookings" class="border mb-4 p-4 bg-white rounded-lg">
+      <p><span class="font-bold">Name:</span>{{book.name}} </p>
+        <p><span class="font-bold">Phone:</span> {{book.phone}}</p>
+        <p><span class="font-bold">No. of tickets:</span> {{book.tickets}}</p>
+        <p><span class="font-bold">Tour Destination</span> {{book.tourName}}</p>
+        <p><span class="font-bold">Date</span> Published {{book.createdAt | date: 'medium' }}</p>
         <div class="flex gap-3 text-sm mt-2">
           <p class="cursor-pointer">Edit</p>
           <p>|</p>
