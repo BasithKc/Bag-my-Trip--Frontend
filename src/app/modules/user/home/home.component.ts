@@ -3,6 +3,8 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 import { ChangeDetectorRef } from "@angular/core";
 import { fadeIn,slideInLeft } from "src/app/modules/shared/animations";
 import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-popup.component';
+import { TourService } from '../services/tour.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +29,8 @@ import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-p
 })
 export class HomeComponent{
  @ViewChild(TripPlanPopupComponent) tripPlanPopup!: TripPlanPopupComponent
-  constructor(private cdr: ChangeDetectorRef) {}
+
+  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
 
   iconView = false
   headView = false
@@ -35,10 +38,12 @@ export class HomeComponent{
   bannerView = false
   mainBannerView = false
 
+  selectedDestination:string = ''
+
   //  Whatsapp message configuration
   phoneNumber = '+918943639725'
   message = 'Hello, Tell me about your services'
-
+   
  
  openTripPlanPopup  () {
   this.tripPlanPopup.openPopup()
@@ -51,6 +56,14 @@ export class HomeComponent{
   openWhatsApp() {
     const url = `https://wa.me/${this.phoneNumber}?text=${encodeURIComponent(this.message)}`;
     window.open(url, '_blank')
+  }
+
+  onSubmit() {
+    if(this.selectedDestination) {
+      this.router.navigate(['/package'], {
+        queryParams: { destination: this.selectedDestination }
+      })
+    }
   }
 
     textAnimation: boolean = false

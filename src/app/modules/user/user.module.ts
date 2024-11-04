@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
 import { GalleryComponent } from './packgeDetailsPage/components/gallery/gallery.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserComponent } from './user.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -47,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class UserModule { }

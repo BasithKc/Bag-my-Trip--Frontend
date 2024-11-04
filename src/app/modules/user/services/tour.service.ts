@@ -29,4 +29,8 @@ export class TourService {
   getAllTours():Observable<any> {
     return this.http.get(`${this.baseUrl}/api/user/tours/all`)
   }
+
+  submitDestination(destination:string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/user/tours/filter?destination=${destination}`)
+  }
 }

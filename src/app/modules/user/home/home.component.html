@@ -10,15 +10,15 @@
       <div class="flex w-full items-center mt-10 text-sm" [@slideInLeft]="mainBannerView ? 'visible' : 'hidden'">
         <div class="rounded-lg shadow-md flex items-center filter-search p-2">
           <div class="border-r border-gray-300 p-2  md:p-4 lg:px-6 xl:px-8 flex items-center">
-            <select class="outline-none text-gray-700 bg-transparent appearance-none px-10">
-              <option disabled selected>Where to?</option>
-              <option>Wayand</option>
-              <option>Lakshwadeep</option>
-              <option>Kashmir</option>
+            <select  class="outline-none text-gray-700 bg-transparent appearance-none px-10" [(ngModel)]="selectedDestination">
+              <option value="" disabled selected>Where to?</option>
+              <option value="Manali">Manali</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Kashmir">Kashmir</option>
             </select>
             <i class="fa-solid fa-chevron-down text-gray-700 text-sm"></i>
           </div>
-          <button class="transition ease-in-out active:scale-95 bg-orange-500 text-white px-4 py-2 md:py-4 md:px-8 lg:px-10 xl:px-12 rounded-r-lg hover:bg-orange-600 duration-300">
+          <button (click)="onSubmit()" class="transition ease-in-out active:scale-95 bg-orange-500 text-white px-4 py-2 md:py-4 md:px-8 lg:px-10 xl:px-12 rounded-r-lg hover:bg-orange-600 duration-300">
               Submit
           </button>
         </div>
