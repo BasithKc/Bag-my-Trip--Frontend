@@ -16,7 +16,7 @@ export class ServicesComponent {
         {
             image : "/assets/images/services/tour-guide.png",
             heading : "Tour Packages",
-            body : "Expert guidance and Tour packages for unforgettable trips. Discover hidden gems with our knowledgeable guides. Let us curate the perfect journey for you."
+            body : "Expert guidance and Tour packages for unforgettable trips. Discover hidden gems with our knowledgeable guides."
         },
         {
             image : "/assets/images/services/flight.png",
@@ -34,19 +34,19 @@ export class ServicesComponent {
             body : "Seamless trian bookings at your fingertips. Find the best deals on trains. Book now and secure your dream vacation."
         },
         {
-            image : "/assets/images/services/bus.webp",
+            image : "/assets/images/services/bus.png",
             heading : "Bus Tickets",
             body : "Seamless bus bookings at your fingertips. Find the best deals on buses. Book now and secure your dream vacation."
         },
         {
             image: "/assets/images/services/hotel.png",
             heading: "Hotel Booking",
-            body: "Find your perfect stay with our extensive hotel options. From luxury resorts to cozy boutique hotels, book accommodations that match your style and budget."
+            body: "Find your perfect stay with our extensive hotel options. From luxury resorts to cozy boutique hotels."
         },
         {
             image: "/assets/images/services/passport.png",
             heading: "Visa Services",
-            body: "Hassle-free visa processing for your international travels. Expert assistance with documentation, application, and tracking. Make your travel dreams a reality."
+            body: "Hassle-free visa processing for your international travels. Expert assistance with documentation, application, and tracking."
         },
     ]
 
