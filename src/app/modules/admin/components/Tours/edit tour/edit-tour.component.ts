@@ -407,6 +407,8 @@ export class EditTourComponent implements OnInit{
    }
 
   resetForm() {
+    this.previewUrl = null
+    this.galleryImages = []
     this.editTourForm.reset()
   }
 

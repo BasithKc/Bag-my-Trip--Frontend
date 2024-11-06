@@ -39,6 +39,14 @@
             </ul>
           </td>
         </tr>
+        <tr *ngIf="tourDetails.hotel.length > 0">
+          <td class="align-top">
+            <h3 class="font-bold text-orange-500 text-base sm:text-lg">Hotel</h3>
+          </td>
+          <td>
+            <p *ngFor="let hotel of tourDetails.hotel">{{hotel.name}} - {{hotel.star}} Star Hotel</p>
+          </td>
+        </tr>
       </table>
     </div>
 

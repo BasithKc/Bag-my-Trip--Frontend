@@ -290,6 +290,7 @@ export class AddToursComponent implements OnInit{
           
         },
         error => {
+          console.log(error)
           this.showErrorAlert()
         }
       );
@@ -317,6 +318,8 @@ export class AddToursComponent implements OnInit{
    }
 
   resetForm() {
+    this.previewUrl = null
+    this.galleryImage = []
     this.addTourForm.reset()
   }
 
