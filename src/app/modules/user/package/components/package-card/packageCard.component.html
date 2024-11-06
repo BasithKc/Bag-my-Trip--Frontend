@@ -3,8 +3,8 @@
 <div class="flex justify-center">
     <div class="w-full">
         
-        <div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3  sm:gap-3 place-items-center overflow-x-auto p-5"> 
-            <div *ngFor="let tour of tours" class="hover:bg-white w-full sm:w-[12.5rem] md:w-[17rem] lg:w-[19rem] flex flex-col p-2 rounded-lg gap-2 hover:shadow-2xl border border-gray-100 hover:border-none active:scale-95 transition ease-in-out duration-300 hover:-translate-y-1 cursor-pointer text-[#181E4B]" [routerLink]="['/package-details', tour._id, 'information']"> 
+        <div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3  md:gap-4 place-items-center overflow-x-auto p-5"> 
+            <div *ngFor="let tour of tours" class="hover:bg-white w-full sm:w-[12.5rem] md:w-[15rem] lg:w-[15rem] xl:w-[19rem] flex flex-col p-2 rounded-lg gap-2 hover:shadow-2xl border border-gray-100 hover:border-none active:scale-95 transition ease-in-out duration-300 hover:-translate-y-1 cursor-pointer text-[#181E4B]" [routerLink]="['/package-details', tour._id, 'information']"> 
                 <div class="">
                     <img [src]="tour.featureImage" class="rounded-t-lg h-[180px] w-full" alt="">
                 </div>

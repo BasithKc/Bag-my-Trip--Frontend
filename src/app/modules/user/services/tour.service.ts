@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, map, Observable, tap, throwError } from "rxjs";
 import { Environment } from "src/app/environments/env";
@@ -30,7 +30,15 @@ export class TourService {
     return this.http.get(`${this.baseUrl}/api/user/tours/all`)
   }
 
-  submitDestination(destination:string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/user/tours/filter?destination=${destination}`)
+  getFilteredTrips(destination?:string, tripType?:string): Observable<any> {
+    let params = new HttpParams()
+
+    if (destination) {
+      params = params.set('destination', destination);
+    }
+    if (tripType) {
+      params = params.set('tripType', tripType);
+    }
+    return this.http.get(`${this.baseUrl}/api/user/tours/filter`, { params })
   }
 }

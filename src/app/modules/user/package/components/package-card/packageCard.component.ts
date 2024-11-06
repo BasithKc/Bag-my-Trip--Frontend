@@ -15,9 +15,9 @@ export class PackageCardComponent implements OnInit{
     ngOnInit(): void {
 
         this.route.queryParams.subscribe(params => {
-            const destination = params['destination']
-            if(destination) {
-                this.tourService.submitDestination(destination).subscribe({
+            const {destination, tripType} = params
+            if( destination || tripType ) {
+                this.tourService.getFilteredTrips(destination, tripType).subscribe({
                     next: (data) => {
                         this.tours= data.tours
                     },
