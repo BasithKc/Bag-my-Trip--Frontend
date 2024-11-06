@@ -46,7 +46,7 @@ export class ServicesComponent {
         {
             image: "/assets/images/services/passport.png",
             heading: "Visa Services",
-            body: "Hassle-free visa processing for your international travels. Expert assistance with documentation, application, and tracking."
+            body: "Hassle-free visa processing for your international travels. Expert assistance with documentation, application"
         },
     ]
 
