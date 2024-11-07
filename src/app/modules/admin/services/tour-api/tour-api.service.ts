@@ -31,8 +31,8 @@ export class TourApiService {
     return this.http.post(`${this.baseUrl}/api/admin/tours/create`, tourData)
   }
 
-  getTours(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/admin/tours/get`).pipe(
+  getTours(page: number = 1, search: string = ''): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/admin/tours/get?page=${page}&search=${encodeURIComponent(search)}`).pipe(
       tap((res: any) => this.toursSubject.next(res.tours))
     )
   }

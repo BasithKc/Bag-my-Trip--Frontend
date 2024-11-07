@@ -26,8 +26,8 @@ export class TourService {
     );
   }
 
-  getAllTours():Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/user/tours/all`)
+  getAllTours(page: number = 1):Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/user/tours/all?page=${page}`)
   }
 
   getFilteredTrips(destination?:string, tripType?:string): Observable<any> {

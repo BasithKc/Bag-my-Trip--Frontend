@@ -21,13 +21,11 @@
 
         <div class="w-full flex items-center justify-center mt-10">
             <div class="h-[3.2rem] w-[90%] flex items-center justify-center">
-                <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl"> < </button>
+                <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl" [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)"> < </button>
                 <div class="overflow-auto max-w-[80%] flex items-center">
-                    <div class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out">1</div>
-                    <div class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out">2</div>
-                    <div class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out">3</div>
+                    <div *ngFor="let page of getPageNumbers()" [class.active]="page === currentPage" (click)="changePage(page)" class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out"> {{page}} </div>
                 </div>
-                <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl"> > </button>
+                <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl" [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)"> > </button>
             </div>
         </div>
 
