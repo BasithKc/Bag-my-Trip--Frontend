@@ -3,7 +3,6 @@ name: Deploy Angular Application
 on:
   push:
     branches: [feature]
-  workflow_dispatch:
 
 jobs:
   build:
@@ -28,6 +27,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSSWORD }}
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -58,6 +58,7 @@ jobs:
 
       - name: Run docker container
         run: docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container --restart unless-stopped basith7618/angular-app:latest
+
       - name: Debug container
         run: |
           echo "Container logs:"
