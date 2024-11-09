@@ -67,5 +67,3 @@ jobs:
           docker ps -a
           echo "Images available:"
           docker images
-          echo "Nginx configuration:"
-          docker exec angular-app-container cat /etc/nginx/conf.d/default.conf
