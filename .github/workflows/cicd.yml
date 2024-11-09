@@ -54,7 +54,7 @@ jobs:
         run: docker pull basith7618/angular-app:latest
 
       - name: Delete old container
-        run: docker rm -f angular-app-container ||true
+        run: docker rm -f angular-app-container || true
 
       - name: Run docker container
         run: docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container --restart unless-stopped basith7618/angular-app:latest
