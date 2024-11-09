@@ -301,6 +301,8 @@ export class EditTourComponent implements OnInit{
       included: [''],
       isDone: [false]
     })
+
+    this.itineraryFormArray.push(dayForm)
   }
 
   // Open file input

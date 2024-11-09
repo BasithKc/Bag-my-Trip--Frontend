@@ -21,4 +21,5 @@ COPY --from=build /app/dist/bag-my-trip-frontend/ .
 # Add build info
 COPY --from=build /app/build-time.txt /usr/share/nginx/html/
 EXPOSE 80
+EXPOSE 443
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
