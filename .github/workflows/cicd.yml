@@ -50,6 +50,9 @@ jobs:
       - name: Clean up
         run: docker system prune -f
 
+      - name: Create network
+        run: docker network create app-network || true
+
       - name: Pull image from dockerhub
         run: docker pull basith7618/angular-app:latest
 
@@ -57,7 +60,7 @@ jobs:
         run: docker rm -f angular-app-container || true
 
       - name: Run docker container
-        run: docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container --restart unless-stopped basith7618/angular-app:latest
+        run: docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container --restart unless-stopped --network app-network basith7618/angular-app:latest
 
       - name: Debug container
         run: |
@@ -65,5 +68,5 @@ jobs:
           docker logs angular-app-container
           echo "Container status:"
           docker ps -a
-          echo "Images available:"
-          docker images
+          echo "SSL certificates:"
+          ls -l /etc/letsencrypt/live/bagmytrip.in/
