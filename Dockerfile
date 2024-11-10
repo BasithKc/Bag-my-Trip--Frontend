@@ -29,7 +29,7 @@ RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx /etc/nginx/conf.d \
 
 # Copy nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 RUN chown nginx:nginx /etc/nginx/conf.d/default.conf
 
 # Copy built angular files
