@@ -60,7 +60,7 @@ jobs:
         run: docker rm -f angular-app-container || true
 
       - name: Run docker container
-        run: docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container --group-add ssl-cert --restart unless-stopped --network app-network basith7618/angular-app:latest
+        run: docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container  --restart unless-stopped --network app-network basith7618/angular-app:latest
 
       - name: Debug container
         run: |
