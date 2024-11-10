@@ -16,6 +16,19 @@ WORKDIR /usr/share/nginx/html
 # Remove default nginx static files
 RUN rm -rf ./*
 
+# Install necessary packages
+RUN apk add --no-cache shadow
+
+# Create SSL directory
+RUN mkdir -p /etc/letsencrypt
+
+# Add nginx user to SSL cert group
+RUN groupadd -g 101 ssl-cert \
+  && usermod -aG ssl-cert nginx
+
+# Set proper permissions
+RUN chmod 755 /etc/letsencrypt
+
 # Create required directories and set permissions
 RUN mkdir -p /var/cache/nginx /var/run /var/log/nginx /etc/nginx/conf.d \
   && chown -R nginx:nginx /var/cache/nginx /var/run /var/log/nginx /etc/nginx/conf.d \
