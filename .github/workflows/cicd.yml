@@ -43,7 +43,7 @@ jobs:
       - name: Publish image to dockerhub
         run: |
           docker push basith7618/angular-app:latest
-          
+
   deploy:
     needs: build
     runs-on: self-hosted
@@ -61,7 +61,13 @@ jobs:
         run: docker rm -f angular-app-container || true
 
       - name: Run docker container
-        run: docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container  --tmpfs /tmp --restart unless-stopped --network app-network basith7618/angular-app:latest
+        run: |
+          sudo chown -R root:root /etc/letsencrypt
+          sudo chmod -R 755 /etc/letsencrypt
+          sudo chmod 644 /etc/letsencrypt/live/bagmytrip.in/*.pem
+          sudo chmod 644 /etc/letsencrypt/archive/bagmytrip.in/*.pem
+
+          docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container  --tmpfs /tmp --restart unless-stopped --network app-network basith7618/angular-app:latest
 
       - name: Debug container
         run: |
