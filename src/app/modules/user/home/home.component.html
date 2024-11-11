@@ -1,43 +1,50 @@
 <section>
-  <div class="hero w-full h-[90vh] bg-left p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] flex flex-col justify-center" (inView)="onMainBanner()">
+  <div class="hero w-full h-[90vh] bg-left p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] flex flex-col justify-center"
+    (inView)="onMainBanner()">
     <div [@fadeIn]="mainBannerView ? 'visible' : 'hidden'">
-      <p class="font-semibold text-3xl md:text-3xl lg:text-4xl text-white leading-normal md:leading-tight lg:leading-snug mt-10">
+      <p
+        class="font-semibold text-3xl md:text-3xl lg:text-4xl text-white leading-normal md:leading-tight lg:leading-snug mt-10">
         No matter where <br> you’re going to, <br> we’ll take you there
       </p>
-      
+
     </div>
 
-      <div class="flex w-full items-center mt-10 text-sm" [@slideInLeft]="mainBannerView ? 'visible' : 'hidden'">
-        <div class="rounded-lg shadow-md flex items-center filter-search p-2">
-          <div class="border-r border-gray-300 p-2  md:p-4 lg:px-6 xl:px-8 flex items-center">
-            <select  class="outline-none text-gray-700 bg-transparent appearance-none px-10" [(ngModel)]="selectedDestination">
-              <option value="" disabled selected>Where to?</option>
-              <option value="Manali">Manali</option>
-              <option value="Lakshadweep">Lakshadweep</option>
-              <option value="Kashmir">Kashmir</option>
-              <option value="Malaysia">Malaysia</option>
-              <option value="Azerbaijan">Azerbaijan</option>
-              <option value="Thailand">Thailand</option>
-            </select>
-            <i class="fa-solid fa-chevron-down text-gray-700 text-sm"></i>
-          </div>
-          <button (click)="onSubmit()" class="transition ease-in-out active:scale-95 bg-orange-500 text-white px-4 py-2 md:py-4 md:px-8 lg:px-10 xl:px-12 rounded-r-lg hover:bg-orange-600 duration-300">
-              Submit
-          </button>
+    <div class="flex w-full items-center mt-10 text-sm" [@slideInLeft]="mainBannerView ? 'visible' : 'hidden'">
+      <div class="rounded-lg shadow-md flex items-center filter-search p-2">
+        <div class="border-r border-gray-300 p-2  md:p-4 lg:px-6 xl:px-8 flex items-center">
+          <select class="outline-none text-gray-700 bg-transparent appearance-none px-10"
+            [(ngModel)]="selectedDestination">
+            <option value="" disabled selected>Where to?</option>
+            <option value="Manali">Manali</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Kashmir">Kashmir</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+            <option value="Thailand">Thailand</option>
+          </select>
+          <i class="fa-solid fa-chevron-down text-gray-700 text-sm"></i>
         </div>
-         
+        <button (click)="onSubmit()"
+          class="transition ease-in-out active:scale-95 bg-orange-500 text-white px-4 py-2 md:py-4 md:px-8 lg:px-10 xl:px-12 rounded-r-lg hover:bg-orange-600 duration-300">
+          Submit
+        </button>
       </div>
 
-      <div class="mt-5" [@slideInLeft]="mainBannerView ? 'visible' : 'hidden'" >
-        <button class="transition ease-in-out active:scale-95 plan-btn shadow-md bg-green-500 text-white px-6 py-4 lg:px-10 lg:py-5 lg:text-md rounded-r-lg hover:bg-orange-600 duration-300" (click)="openTripPlanPopup()">Choose your plan <i class="fa-solid fa-arrow-right"></i></button>
-      </div>
+    </div>
+
+    <div class="mt-5" [@slideInLeft]="mainBannerView ? 'visible' : 'hidden'">
+      <button
+        class="transition ease-in-out active:scale-95 plan-btn shadow-md bg-green-500 text-white px-6 py-4 lg:px-10 lg:py-5 lg:text-md rounded-r-lg hover:bg-orange-600 duration-300"
+        (click)="openTripPlanPopup()">Choose your plan <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
   </div>
 
   <!-- Whatsapp Icon -->
-     <div (click)="openWhatsApp()" class="fixed bottom-20 right-10 lg:bottom-20 lg:right-20  cursor-pointer z-[1001] flex items-center gap-5">
-      <i class="fa-brands fa-whatsapp fa-bounce text-[2.8rem]" style="color: #63E6BE;"></i>
-    </div>
- 
+  <div (click)="openWhatsApp()"
+    class="fixed bottom-20 right-10 lg:bottom-20 lg:right-20  cursor-pointer z-[1001] flex items-center gap-5">
+    <i class="fa-brands fa-whatsapp fa-bounce text-[2.8rem]" style="color: #63E6BE;"></i>
+  </div>
+
 </section>
 <app-trip-plan-popup (planSelected)="onPlanSelected($event)"></app-trip-plan-popup>
 
@@ -57,19 +64,20 @@
 <app-explore-banner></app-explore-banner>
 
 <!-- Resort Section -->
-<div class="w-full p-2 md:px-[100px] lg:px-[150px] xl:px-[200px] text-[#181E4B] mt-10 mb-10">
+<div class="w-full p-5 md:px-[100px] lg:px-[150px] xl:px-[200px] text-[#181E4B] mt-10 mb-10">
   <div class="w-full flex justify-between  items-center gap-5">
     <div>
       <p class="text-orange-500 text-xs" [@fadeIn]="headView ? 'visible' : 'hidden'"><b>Fast & Easy</b></p>
-      <div class="text-[1.5rem] lg:text-[1.9rem] mb-2 text-[#181E4B]" (inView)="onHead()" [@fadeIn]="headView ? 'visible' : 'hidden'">
+      <div class="text-[1.5rem] lg:text-[1.9rem] mb-2 text-[#181E4B]" (inView)="onHead()"
+        [@fadeIn]="headView ? 'visible' : 'hidden'">
         <b class="leading-normal md:leading-tight lg:leading-snug">Get Your Favorite <br> Resort Bookings</b>
       </div>
-      
+
       <div class="mt-5  flex-col gap-5" (inView)="onIcon()">
         <div class="flex items-center gap-3">
           <div [@slideInBottom]="iconView ? 'visible' : 'hidden'">
             <i class="fa-solid fa-location-dot text-white p-3 rounded-lg bg-yellow-400 row-span-2"></i>
-          </div>  
+          </div>
           <div class="flex-col text-sm justify-start" [@slideInLeft]="iconView ? 'visible' : 'hidden'">
             <p><b>Choose your destination</b></p>
             <p>Pick your dream destination. Your choice shapes your perfect getaway</p>
@@ -98,15 +106,19 @@
 
         <!-- Book Now Button -->
         <div class="mt-5 flex justify-center md:hidden" (inView)="onImage()" [@fadeIn]="imgView ? 'visible' : 'hidden'">
-          <button class="transition ease-in-out active:scale-95 duration-300 book-btn  text-white font-bold px-6 py-3 rounded-lg hover:text-orange-600">Book Now</button>
+          <button
+            class="transition ease-in-out active:scale-95 duration-300 book-btn  text-white font-bold px-6 py-3 rounded-lg hover:text-orange-600">Book
+            Now</button>
         </div>
       </div>
     </div>
-    <div class="resort hidden md:flex flex-col bg-white shadow-md rounded-xl p-3 hover:scale-105 active:scale-100 transition duration-300" (inView)="onImage()">
+    <div
+      class="resort hidden md:flex flex-col bg-white shadow-md rounded-xl p-3 hover:scale-105 active:scale-100 transition duration-300"
+      (inView)="onImage()">
       <div [@fadeIn]="imgView ? 'visible' : 'hidden'">
         <img src="../../../../../assets/images/resort-in-kerala--750x430.webp" class="w-[250px] rounded-xl" alt="">
       </div>
-      <div  [@fadeIn]="imgView ? 'visible' : 'hidden'">
+      <div [@fadeIn]="imgView ? 'visible' : 'hidden'">
         <p class="font-bold text-sm mt-3">Book your resort now</p>
       </div>
     </div>
@@ -114,45 +126,57 @@
 </div>
 
 <!-- Banner -->
-<div class="w-full banner flex justify-start items-center mt-10 md:mt-20 p-2 md:px-[100px] lg:px-[150px] xl:px-[200px] lg:py-[50px]" (inView)="onBanner()">
-  <p class="text-white text-xl  lg:text-4xl font-semibold banner-text my-10 leading-10 px-10" [@slideInLeft]="bannerView ? 'visible' : 'hidden'">Let's Make Your<br> Next Holiday Amazing</p>
- </div>
+<div
+  class="w-full banner flex justify-start items-center mt-10 md:mt-20 p-2 md:px-[100px] lg:px-[150px] xl:px-[200px] lg:py-[50px]"
+  (inView)="onBanner()">
+  <p class="text-white text-xl  lg:text-4xl font-semibold banner-text my-10 leading-10 px-10"
+    [@slideInLeft]="bannerView ? 'visible' : 'hidden'">Let's Make Your<br> Next Holiday Amazing</p>
+</div>
 
 
- <!-- Kashmir section -->
+<!-- Kashmir section -->
 
-  <div class="w-full h-auto p-2 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2 mt-10">
-    <div class="w-full h-auto py-5  flex flex-col items-center gap-5 lg:gap-[4rem]  xs:items-center sm:flex-row-reverse sm:items-center md:justify-between  sm:pl-3">
-      <div class="py-5 w-full sm:w-3/5 md:w-1/2 max-w-[16.5rem] xs:max-w-[18rem] sm:xs:max-w-[20rem] lg:xs:max-w-[22rem] ">
-          <div id="imageContainer" class="w-full  flex justify-start" (inView)="onImgView()">
-              <div class="bg-kashmir_main bg-no-repeat bg-cover bg-center w-full h-[25rem] rounded-t-full relative" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'">
-                  <div class="absolute -rotate-90 text-3xl bottom-[8.5rem] right-[-10.2rem] text-gray-200"><b>Breath Taking Views</b></div>
-                  <!-- BORDER -->
-                  <div class="absolute border-t border-l border-t-slate-700 border-r-slate-500 -z-10 w-full h-[25.5rem] top-[-.5rem] left-[-.5rem] rounded-t-full" [@fadeIn]="imgAnimation ? 'visible' : 'hidden'"></div>
-              </div>
-          </div>
+<div class="w-full h-auto p-2 md:px-[100px] lg:px-[150px] xl:px-[200px] py-2 mt-10">
+  <div
+    class="w-full h-auto py-5  flex flex-col items-center gap-5 lg:gap-[4rem]  xs:items-center sm:flex-row-reverse sm:items-center md:justify-between  sm:pl-3">
+    <div
+      class="py-5 w-full sm:w-3/5 md:w-1/2 max-w-[16.5rem] xs:max-w-[18rem] sm:xs:max-w-[20rem] lg:xs:max-w-[22rem] ">
+      <div id="imageContainer" class="w-full  flex justify-start" (inView)="onImgView()">
+        <div class="bg-kashmir_main bg-no-repeat bg-cover bg-center w-full h-[25rem] rounded-t-full relative"
+          [@fadeIn]="imgAnimation ? 'visible' : 'hidden'">
+          <div class="absolute -rotate-90 text-3xl bottom-[8.5rem] right-[-10.2rem] text-gray-200"><b>Breath Taking
+              Views</b></div>
+          <!-- BORDER -->
+          <div
+            class="absolute border-t border-l border-t-slate-700 border-r-slate-500 -z-10 w-full h-[25.5rem] top-[-.5rem] left-[-.5rem] rounded-t-full"
+            [@fadeIn]="imgAnimation ? 'visible' : 'hidden'"></div>
+        </div>
       </div>
-  
-      <div (inView)="onTextView()" [@slideInLeft]="textAnimation ? 'visible' : 'hidden'" class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start py-5 text-center sm:text-start gap-3">
-          <div class="text-center sm:text-start text-xs text-orange-500"><b>PROMOTION</b></div>
-          <div class=" text-center sm:text-start mb-2 text-[1.5rem] lg:text-[1.9rem]">
-              <b class="leading-normal md:leading-tight lg:leading-snug">We Provide You Best <br> Kashmir Sightseeing Tours</b>
-          </div>
-          <div>
-              <p>
-                Discover the unparalleled beauty of Kashmir with our expertly curated sightseeing tours. From breathtaking landscapes to cultural landmarks, we ensure a journey filled with unforgettable experiences. Let us guide you through the hidden gems and scenic wonders of this paradise on earth!
-              </p>
-          </div>
-          <button class="px-5 mt-2 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 active:scale-95 transition duration-100 ease-in-out" [routerLink]="['/package']" [queryParams]="{destination: 'Kashmir'}">View Packages</button>
+    </div>
 
-          <div class="hidden lg:flex gap-10 flex-shrink relative z-100 mt-10">
-            <div class="bg-kashmir_1 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
-            <div class="bg-kashmir_2 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
-            <div class="bg-kashmir_3 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
-          </div>
+    <div (inView)="onTextView()" [@slideInLeft]="textAnimation ? 'visible' : 'hidden'"
+      class="w-full sm:w-2/5 md:w-1/2 max-w-[35rem] flex flex-col items-center sm:items-start py-5 text-center sm:text-start gap-3">
+      <div class="text-center sm:text-start text-xs text-orange-500"><b>PROMOTION</b></div>
+      <div class=" text-center sm:text-start mb-2 text-[1.5rem] lg:text-[1.9rem]">
+        <b class="leading-normal md:leading-tight lg:leading-snug">We Provide You Best <br> Kashmir Sightseeing
+          Tours</b>
+      </div>
+      <div>
+        <p>
+          Discover the unparalleled beauty of Kashmir with our expertly curated sightseeing tours. From breathtaking
+          landscapes to cultural landmarks, we ensure a journey filled with unforgettable experiences. Let us guide you
+          through the hidden gems and scenic wonders of this paradise on earth!
+        </p>
+      </div>
+      <button
+        class="px-5 mt-2 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 active:scale-95 transition duration-100 ease-in-out"
+        [routerLink]="['/package']" [queryParams]="{destination: 'Kashmir'}">View Packages</button>
+
+      <div class="hidden lg:flex gap-10 flex-shrink relative z-100 mt-10">
+        <div class="bg-kashmir_1 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
+        <div class="bg-kashmir_2 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
+        <div class="bg-kashmir_3 rounded-md bg-no-repeat bg-cover bg-center w-[10rem] h-[11rem]"></div>
       </div>
     </div>
   </div>
-  
-
-
+</div>
