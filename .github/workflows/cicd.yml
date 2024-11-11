@@ -69,4 +69,4 @@ jobs:
           echo "Container status:"
           docker ps -a
           echo "SSL certificates:"
-          ls -l /etc/letsencrypt/live/www.bagmytrip.in/
+          ls -l /etc/letsencrypt/live/bagmytrip.in/
