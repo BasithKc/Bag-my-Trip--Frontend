@@ -43,6 +43,7 @@ jobs:
       - name: Publish image to dockerhub
         run: |
           docker push basith7618/angular-app:latest
+          
   deploy:
     needs: build
     runs-on: self-hosted
