@@ -16,7 +16,7 @@ export class TourService {
   constructor(private http: HttpClient) {}
 
   getTourDetails(id:any) {
-    return this.http.get(`${this.baseUrl}/api/user/tours/${id}`).pipe(
+    return this.http.get(`${this.baseUrl}/user/tours/${id}`).pipe(
       map((res: any) => res.tour),
       tap(tour => this.tourDetailsSubject.next(tour)),
       catchError(error => {
@@ -27,7 +27,7 @@ export class TourService {
   }
 
   getAllTours(page: number = 1):Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/user/tours/all?page=${page}`)
+    return this.http.get(`${this.baseUrl}/user/tours/all?page=${page}`)
   }
 
   getFilteredTrips(destination?:string, tripType?:string): Observable<any> {
@@ -39,6 +39,6 @@ export class TourService {
     if (tripType) {
       params = params.set('tripType', tripType);
     }
-    return this.http.get(`${this.baseUrl}/api/user/tours/filter`, { params })
+    return this.http.get(`${this.baseUrl}/user/tours/filter`, { params })
   }
 }
