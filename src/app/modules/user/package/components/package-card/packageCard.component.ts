@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { TourService } from "../../../services/tour.service";
-import { ActivatedRoute, Route } from "@angular/router";
+import { ActivatedRoute, Route, Router } from "@angular/router";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
     selector : "package-card",
@@ -12,10 +13,17 @@ export class PackageCardComponent implements OnInit{
     currentPage: number = 1
     totalPages = 1
 
-    constructor(private tourService: TourService, private route: ActivatedRoute) {}
+    constructor(
+        private tourService: TourService, 
+        private route: ActivatedRoute, 
+        private title: Title, 
+        private meta: Meta,
+        private router: Router
+     ) {}
 
     ngOnInit(): void {
         this.loadItems()
+        this.setMetaTags()
     }
 
     loadItems () {
@@ -59,5 +67,37 @@ export class PackageCardComponent implements OnInit{
         }
 
         return pages
+    }
+
+    private setMetaTags() {
+        // Set the page title
+        this.title.setTitle('Tour Listings | Bag My Trip');
+    
+        // Remove any existing meta tags
+        this.meta.removeTag('name="description"');
+        this.meta.removeTag('name="keywords"');
+        this.meta.removeTag('property="og:title"');
+        this.meta.removeTag('property="og:description"');
+        this.meta.removeTag('property="og:url"');
+        this.meta.removeTag('property="og:image"');
+    
+        // Add new meta tags
+        const metaTags = [
+          { name: 'description', content: 'Explore our curated collection of amazing tours and travel experiences. Find your perfect adventure with Bag My Trip.' },
+          { name: 'keywords', content: 'tours, travel, adventures, trips, holiday packages, travel experiences' },
+          { property: 'og:title', content: 'Tour Listings | Bag My Trip' },
+          { property: 'og:description', content: 'Discover and book incredible tours and travel experiences with Bag My Trip.' },
+          { property: 'og:url', content: `${window.location.origin}${this.router.url}` },
+          { property: 'og:image', content: 'https://bagmytrip.in/assets/images/bag my trip logo new.png' }
+        ];
+    
+        metaTags.forEach(tag => {
+          if (tag.name) {
+            this.meta.updateTag({ name: tag.name, content: tag.content });
+          } else if (tag.property) {
+            this.meta.updateTag({ property: tag.property, content: tag.content });
+          }
+        });
+
     }
 }

@@ -1,0 +1,12 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Prevent crawling of search results
+Disallow: /admin/
+
+# Point to your sitemap
+Sitemap: https://www.bagmytrip.in/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 10
