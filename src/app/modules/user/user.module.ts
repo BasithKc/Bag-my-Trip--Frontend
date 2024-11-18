@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { TripPlanPopupComponent } from './home/components/trip-plan-popup/trip-plan-popup.component';
@@ -20,7 +20,7 @@ import { SharedModule } from '../shared/shared.module';
 import { UserComponent } from './user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+// import { TrendingComponent } from './home/components/trending/trending.component';
 
 
 @NgModule({
@@ -41,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryComponent,
     PackageDetails,
     InviewDirective,
+    // TrendingComponent,
   ],
   imports: [
     CommonModule,
@@ -48,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class UserModule { }

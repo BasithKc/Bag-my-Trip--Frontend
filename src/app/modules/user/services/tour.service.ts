@@ -41,4 +41,8 @@ export class TourService {
     }
     return this.http.get(`${this.baseUrl}/user/tours/filter`, { params })
   }
+
+  getTrendingTrips() : Observable<any> {
+    return this.http.get(`${this.baseUrl}/user/tours/trending`)
+  }
 }
