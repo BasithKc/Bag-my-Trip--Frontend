@@ -20,7 +20,7 @@ import { SharedModule } from '../shared/shared.module';
 import { UserComponent } from './user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// import { TrendingComponent } from './home/components/trending/trending.component';
+import { TrendingComponent } from './home/components/trending/trending.component';
 
 
 @NgModule({
@@ -41,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryComponent,
     PackageDetails,
     InviewDirective,
-    // TrendingComponent,
+    TrendingComponent,
   ],
   imports: [
     CommonModule,

@@ -37,7 +37,9 @@
   </div>
   <ul class="text-xl space-y-5 mt-5">
     <li (click)="isMenuOpen = false"><a routerLink="['/']">Home</a></li>
-    <li (click)="isMenuOpen = false"><a href="#services">Services</a></li>
+    <li (click)="isMenuOpen = false">
+      <a [routerLink]="['/']">Services</a>
+    </li>
     <li (click)="isMenuOpen = false"><a [routerLink]="['/about']">About</a></li>
     <li (click)="isMenuOpen = false"><a [routerLink]="['/package']">View Packages</a></li>
   </ul>

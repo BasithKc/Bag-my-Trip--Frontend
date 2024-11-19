@@ -6,15 +6,19 @@
             <div *ngFor="let tour of tours"
                 class="hover:bg-white w-full sm:w-[12.5rem] md:w-[15rem] lg:w-[15rem] xl:w-[19rem] flex flex-col p-2 rounded-lg gap-2 hover:shadow-2xl border border-gray-100 hover:border-none active:scale-95 transition ease-in-out duration-300 hover:-translate-y-1 cursor-pointer text-[#181E4B]"
                 [routerLink]="['/package-details', tour._id, 'information']">
-                <div class="">
+                <div class="relative">
                     <img [src]="tour.featureImage" class="rounded-t-lg h-[180px] w-full" alt="">
-                </div>
-                <div class="text-[.9rem] px-1">
-                    <div class="text-[1.3rem]"><b> {{ tour.title }} </b></div>
-                    <div class="flex gap-5 pt-2">
-                        <div class="text-[.9rem] font-bold">Starting from {{ tour.pricePerPerson }}₹</div>
-                        <div class="text-[.9rem] font-bold">{{ tour.duration }}</div>
+                    <div class="absolute bottom-0 w-full flex justify-between py-1 bg-orange-600 text-white px-5">
+                        <div class="text-[.9rem] ">From {{ tour.pricePerPerson }} ₹</div>
+                        <div class="text-[.9rem] flex items-center gap-3">
+                            <i class="fa-regular fa-calendar-days flex-shrink-0"></i>
+                            <span class="flex-grow"> {{ tour.duration }}</span>
+                        </div>
                     </div>
+                </div>
+                <div class="text-[.9rem] px-2">
+                    <div class="text-[1.3rem] mt-3 mb-2"><b> {{ tour.title }} </b></div>
+                    <p class="text-sm sm:text-md line-clamp-2 flex-grow ">{{ tour.description}}</p>
                 </div>
             </div>
         </div>

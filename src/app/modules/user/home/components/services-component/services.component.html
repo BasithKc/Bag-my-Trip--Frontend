@@ -6,15 +6,10 @@
   <!-- Card container -->
   <div class="flex gap-1 md:gap-8 lg:gap-10 justify-center flex-wrap mt-10">
     <!-- Card div -->
-    <div
-      *ngFor="let service of serviceList; let i = index"
-      [@slideInBottom]="cardVisibility[i] ? 'visible' : 'hidden'"
+    <div *ngFor="let service of serviceList; let i = index" [@slideInBottom]="cardVisibility[i] ? 'visible' : 'hidden'"
       (inView)="onCardInView(i, $event)"
-      class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[12rem] flex flex-col p-4 rounded-2xl gap-3 relative hover:shadow-light_wide border border-gray-100 hover:border-none"
-    >
-      <div
-        class="flex z-10 before:-z-20 items-center justify-center before:absolute before:top-[3.3rem] sm:before:top-[4rem] md:before:top-[4.4rem] before:left-[4.5rem] md:before:left-[6rem] before:w-9 before:h-8 before:bg-orange-100 before:rounded-lg"
-      >
+      class="bg-white max-w-[9.85rem] sm:max-w-[11rem] md:max-w-[12rem] flex flex-col p-4 rounded-2xl gap-3 relative hover:shadow-light_wide border border-gray-100 hover:border-none">
+      <div class="flex  items-center justify-center ">
         <img [src]="service.image" class="w-3/5 h-3/5" alt="" />
       </div>
       <div class="text-sm md:text-md text-center">
