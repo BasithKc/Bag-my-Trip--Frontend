@@ -14,13 +14,14 @@
     <swiper-slide *ngFor="let tour of tours; let i = index" class="h-auto tour-card"
       [@slideInBottom]="cardVisibility[i] ? 'visible' : 'hidden'" (inView)="onCardInView(i, $event)">
       <!-- Tour Card -->
-      <div class="flex flex-col h-full bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div
+        class="flex flex-col h-full bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
         <!-- Image Container -->
         <img [src]="tour.featureImage" [alt]="tour.title"
           class="h-[200px] transition-transform duration-300 hover:scale-105">
 
         <!-- Content Container -->
-        <div class="p-4 sm:p-5 flex flex-col flex-grow">
+        <div class="sm:p-5 flex flex-col flex-grow">
           <!-- Duration -->
           <div class="flex items-center gap-2 text-gray-500 text-sm sm:text-base">
             <i class="fa-regular fa-calendar-days flex-shrink-0"></i>
