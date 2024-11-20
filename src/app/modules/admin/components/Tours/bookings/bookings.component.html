@@ -16,7 +16,7 @@
         <tr class="bg-white">
           <th class="px-4 py-2">Name</th>
           <th class="px-4 py-2">Phone</th>
-          <th class="px-4 py-2">No. of tickets</th>
+          <th class="px-4 py-2">No. of travelers</th>
           <th class="px-4 py-2">Tour Destination</th>
           <th class="px-4 py-2">Date</th>
         </tr>
@@ -41,11 +41,6 @@
         <p><span class="font-bold">No. of Travelers:</span> {{book.tickets}}</p>
         <p><span class="font-bold">Tour Destination</span> {{book.tourName}}</p>
         <p><span class="font-bold">Date</span> Published {{book.createdAt | date: 'medium' }}</p>
-        <div class="flex gap-3 text-sm mt-2">
-          <p class="cursor-pointer">Edit</p>
-          <p>|</p>
-          <p class="text-red-500 cursor-pointer">Trash</p>
-        </div>
       </div>
     </div>
   </div>
