@@ -46,6 +46,7 @@ export class TrendingComponent implements OnInit{
     // Swiper parameters
     const swiperParams = {
       slidesPerView: 1,
+      pagination: true,
       spaceBetween: 10,
       autoplay: {
         delay: 3000,
@@ -64,7 +65,6 @@ export class TrendingComponent implements OnInit{
         }
       },
       scrollbar: {
-        el: '.swiper-scrollbar',
         draggable: true,  // Makes the scrollbar draggable
         hide: false       // Keep the scrollbar visible (set to true to auto-hide)
       },

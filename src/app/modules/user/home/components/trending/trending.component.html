@@ -11,17 +11,17 @@
   <!-- Swiper Container -->
   <swiper-container init="false" class="w-full !pb-12">
 
-    <swiper-slide *ngFor="let tour of tours; let i = index" class="h-auto tour-card"
+    <swiper-slide *ngFor="let tour of tours; let i = index" class="w-auto tour-card"
       [@slideInBottom]="cardVisibility[i] ? 'visible' : 'hidden'" (inView)="onCardInView(i, $event)">
       <!-- Tour Card -->
       <div
-        class="flex flex-col h-full bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+        class="flex flex-col h-full bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-2">
         <!-- Image Container -->
         <img [src]="tour.featureImage" [alt]="tour.title"
           class="h-[200px] transition-transform duration-300 hover:scale-105">
 
         <!-- Content Container -->
-        <div class="sm:p-5 flex flex-col flex-grow">
+        <div class="flex flex-col flex-grow mt-2">
           <!-- Duration -->
           <div class="flex items-center gap-2 text-gray-500 text-sm sm:text-base">
             <i class="fa-regular fa-calendar-days flex-shrink-0"></i>
@@ -29,7 +29,7 @@
           </div>
 
           <!-- Title -->
-          <p class="text-xl lg:text-2xl font-semibold mt-2">{{ tour.title }}</p>
+          <p class="text-xl  font-semibold mt-2">{{ tour.title }}</p>
 
           <!-- Location -->
           <div class="flex items-center gap-2 text-gray-500 mt-2 text-sm sm:text-base">
@@ -48,7 +48,7 @@
           </p>
 
           <!-- Button -->
-          <div class="mt-4 sm:mt-6">
+          <div>
             <button
               class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-orange-700 text-white hover:bg-orange-800 active:scale-95 transition duration-200 text-sm sm:text-base font-medium"
               [routerLink]="['/package-details', tour._id, 'information']">
