@@ -115,6 +115,7 @@ export class EditTourComponent implements OnInit{
         if (tourData.tour.gallery && tourData.tour.gallery.length > 0) {
           this.existingGalleryImages = tourData.tour.gallery;
           this.galleryImages = tourData.tour.gallery.map((url: string) => ({ preview: url }));
+          console.log(this.galleryImages)
         }
 
          // Set includes
