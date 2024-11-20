@@ -21,6 +21,10 @@ import { UserComponent } from './user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TrendingComponent } from './home/components/trending/trending.component';
+import { ImagePreviewDialogComponent } from './packgeDetailsPage/components/image-preview-dialog/image-preview-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({
@@ -42,6 +46,7 @@ import { TrendingComponent } from './home/components/trending/trending.component
     PackageDetails,
     InviewDirective,
     TrendingComponent,
+    ImagePreviewDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +55,9 @@ import { TrendingComponent } from './home/components/trending/trending.component
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

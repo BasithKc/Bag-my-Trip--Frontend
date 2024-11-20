@@ -1,0 +1,30 @@
+<div class="relative p-[20px]">
+  <!-- Close button -->
+  <button mat-icon-button class="absolute top-[10px] right-[10px] z-10 text-white" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <!-- Navigation and Image container -->
+  <div class="relative flex items-center justify-center min-h-[200px] mx-[20px] my-0">
+    <!-- Previous button -->
+    <button *ngIf="currentIndex > 0" mat-icon-button class="absolute text-white bg-black opacity-50 left-[10px]"
+      (click)="previous()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <!-- Image -->
+    <img [src]="images[currentIndex]" [alt]="'Image ' + (currentIndex + 1)"
+      class="max-h-[80vh] max-w-full object-contain">
+
+    <!-- Next button -->
+    <button *ngIf="currentIndex < images.length - 1" mat-icon-button
+      class="absolute text-white bg-black opacity-50 right-[10px]" (click)="next()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+
+  <!-- Image counter -->
+  <div class="text-center text-white mt-[10px]">
+    {{ currentIndex + 1 }} / {{ images.length }}
+  </div>
+</div>

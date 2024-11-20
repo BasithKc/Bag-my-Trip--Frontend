@@ -62,8 +62,9 @@
     <div class="mt-8" id="booking-form">
       <p class="text-2xl  font-bold mb-4 text-[#181E4B]">From our gallery</p>
       <div *ngIf="tourDetails.gallery.length > 0" class="grid grid-cols-2 md:grid-cols-3  gap-1 md:gap-4 mt-6 sm:mt-10">
-        <img *ngFor="let photo of tourDetails.gallery" [src]="photo" alt="Gallery image"
-          class="w-full h-40 object-cover" />
+        <img *ngFor="let photo of tourDetails.gallery; let i = index" [src]="photo" alt="Gallery image"
+          (click)="openImagePreview(i)" class="cursor-pointer w-full h-40
+          object-cover  hover:opacity-90 transition-opacity" />
       </div>
     </div>
   </div>
