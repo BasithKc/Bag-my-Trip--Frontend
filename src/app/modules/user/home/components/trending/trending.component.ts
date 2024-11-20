@@ -64,10 +64,6 @@ export class TrendingComponent implements OnInit{
           spaceBetween: 30
         }
       },
-      scrollbar: {
-        draggable: true,  // Makes the scrollbar draggable
-        hide: false       // Keep the scrollbar visible (set to true to auto-hide)
-      },
     };
 
     // Assign Swiper parameters
