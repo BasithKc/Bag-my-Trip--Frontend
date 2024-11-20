@@ -16,6 +16,7 @@ export class PackageDetails implements OnInit{
 
   constructor(
     private router: Router,
+    private tourService: TourService,
     private route: ActivatedRoute,
     private meta: Meta,
     private title: Title
@@ -28,8 +29,11 @@ export class PackageDetails implements OnInit{
      // Get data from resolver
      this.route.data.subscribe(data => {
       this.tourId = data['tourDetials']._id;  
-      this.tourDetails = data['tourDetails']    
     });
+
+    this.tourService.tourDetails$.subscribe(details => {
+      this.tourDetails = details      
+    })
 
     this.setMetaTags(this.tourDetails)
   }
