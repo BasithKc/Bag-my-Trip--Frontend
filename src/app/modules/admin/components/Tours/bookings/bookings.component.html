@@ -29,16 +29,16 @@
           <td class="border px-4 py-2">{{book.tourName}}</td>
           <td class="border px-4 py-2">{{book.createdAt | date:'medium'}}</td>
         </tr>
-  
+
       </tbody>
     </table>
-  
+
     <!-- Responsive card layout for smaller screens -->
     <div class="block md:hidden">
-      <div  *ngFor="let book of tourBookings" class="border mb-4 p-4 bg-white rounded-lg">
-      <p><span class="font-bold">Name:</span>{{book.name}} </p>
+      <div *ngFor="let book of tourBookings" class="border mb-4 p-4 bg-white rounded-lg">
+        <p><span class="font-bold">Name:</span>{{book.name}} </p>
         <p><span class="font-bold">Phone:</span> {{book.phone}}</p>
-        <p><span class="font-bold">No. of tickets:</span> {{book.tickets}}</p>
+        <p><span class="font-bold">No. of Travelers:</span> {{book.tickets}}</p>
         <p><span class="font-bold">Tour Destination</span> {{book.tourName}}</p>
         <p><span class="font-bold">Date</span> Published {{book.createdAt | date: 'medium' }}</p>
         <div class="flex gap-3 text-sm mt-2">
