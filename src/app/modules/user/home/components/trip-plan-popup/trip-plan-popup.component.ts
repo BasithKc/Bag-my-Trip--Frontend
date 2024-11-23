@@ -6,7 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./trip-plan-popup.component.css']
 })
 export class TripPlanPopupComponent {
-  @Output() planSelected = new EventEmitter<{type: string, budget: string}>();
+  @Output() planSelected = new EventEmitter<{ type: string, budget: string }>();
 
   showPopup: boolean = false
   tripTypes = ['family', 'solo', 'couple', 'group']
