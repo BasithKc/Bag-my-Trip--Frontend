@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, map, Observable, tap, throwError } from "rxjs";
 import { Environment } from "src/app/environments/env";
@@ -16,7 +16,7 @@ export class TourService {
   constructor(private http: HttpClient) {}
 
   getTourDetails(id:any) {
-    return this.http.get(`${this.baseUrl}/api/user/tours/${id}`).pipe(
+    return this.http.get(`${this.baseUrl}/user/tours/${id}`).pipe(
       map((res: any) => res.tour),
       tap(tour => this.tourDetailsSubject.next(tour)),
       catchError(error => {
@@ -26,11 +26,23 @@ export class TourService {
     );
   }
 
-  getAllTours():Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/user/tours/all`)
+  getAllTours(page: number = 1):Observable<any> {
+    return this.http.get(`${this.baseUrl}/user/tours/all?page=${page}`)
   }
 
-  submitDestination(destination:string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/user/tours/filter?destination=${destination}`)
+  getFilteredTrips(destination?:string, tripType?:string): Observable<any> {
+    let params = new HttpParams()
+
+    if (destination) {
+      params = params.set('destination', destination);
+    }
+    if (tripType) {
+      params = params.set('tripType', tripType);
+    }
+    return this.http.get(`${this.baseUrl}/user/tours/filter`, { params })
+  }
+
+  getTrendingTrips() : Observable<any> {
+    return this.http.get(`${this.baseUrl}/user/tours/trending`)
   }
 }

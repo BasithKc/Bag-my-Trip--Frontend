@@ -11,15 +11,29 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular app
+        run: npm run build --prod
+
       - name: Login to dockerhub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSSWORD }}
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Generate version
         id: version
-        run: echo "::set-output name=version::$(date +%s)"
+        run: echo "::set-output name=version::$(date +%s)" >>$GITHUB_ENV
 
       - name: Build docker image
         run: |
@@ -29,25 +43,37 @@ jobs:
       - name: Publish image to dockerhub
         run: |
           docker push basith7618/angular-app:latest
+
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
       - name: Clean up
         run: docker system prune -f
+
+      - name: Create network
+        run: docker network create app-network || true
+
       - name: Pull image from dockerhub
         run: docker pull basith7618/angular-app:latest
+
       - name: Delete old container
-        run: docker rm -f angular-app-container ||true
+        run: docker rm -f angular-app-container || true
+
       - name: Run docker container
-        run: docker run -d -p 80:80 --name angular-app-container  --restart unless-stopped  basith7618/angular-app
+        run: |
+          sudo chown -R root:root /etc/letsencrypt
+          sudo chmod -R 755 /etc/letsencrypt
+          sudo chmod 644 /etc/letsencrypt/live/bagmytrip.in/*.pem
+          sudo chmod 644 /etc/letsencrypt/archive/bagmytrip.in/*.pem
+
+          docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name angular-app-container  --tmpfs /tmp --restart unless-stopped --network app-network basith7618/angular-app:latest
+
       - name: Debug container
         run: |
           echo "Container logs:"
           docker logs angular-app-container
           echo "Container status:"
           docker ps -a
-          echo "Images available:"
-          docker images
-          echo "Nginx configuration:"
-          docker exec angular-app-container cat /etc/nginx/conf.d/default.conf
+          echo "SSL certificates:"
+          ls -l /etc/letsencrypt/live/bagmytrip.in/

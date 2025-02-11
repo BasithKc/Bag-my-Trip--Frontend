@@ -27,7 +27,7 @@ export class AuthServiceService {
   constructor(private http: HttpClient) { }
 
   signin(credentials: SignInCredentials) :Observable<SignInResponse> {
-    return this.http.post<SignInResponse>(`${this.apiUrl}/api/admin/auth/signin`, credentials)
+    return this.http.post<SignInResponse>(`${this.apiUrl}/admin/auth/signin`, credentials)
       .pipe(
         tap(response => {
           localStorage.setItem('authToken', response.token)

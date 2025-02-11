@@ -13,6 +13,6 @@ export class BookingService {
   constructor(private http: HttpClient) {}
 
   bookTour(form: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/api/user/tours/book`, form)
+    return this.http.post(`${this.baseUrl}/user/tours/book`, form)
   }
 }

@@ -7,22 +7,30 @@
           <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
             Name
           </label>
-          <input formControlName="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" >
+          <input formControlName="name"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name" type="text">
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
             Phone
           </label>
-          <input formControlName="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" >
+          <input formControlName="phone"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text">
         </div>
         <div class="mb-6">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="guests">
-            Number of Tickets
+            Number of Travelers
           </label>
-          <input formControlName="tickets" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="guests" type="number" min="1" placeholder="1">
+          <input formControlName="tickets"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="guests" type="number" min="1" placeholder="1">
         </div>
         <div class="flex flex-col items-center justify-center">
-          <button class="bg-orange-500 hover:bg-orange-700 text-white  py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+          <button
+            class="bg-orange-500 hover:bg-orange-700 text-white  py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
             Book Now
           </button>
           <p class="text-green-500 text-center mt-2">{{successMsg}}</p>

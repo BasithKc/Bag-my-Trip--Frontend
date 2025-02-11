@@ -31,7 +31,7 @@
               Discover the unparalleled beauty of Kashmir with our expertly curated sightseeing tours. From breathtaking landscapes to cultural landmarks, we ensure a journey filled with unforgettable experiences. Let us guide you through the hidden gems and scenic wonders of this paradise on earth!
             </p>
         </div>
-        <button class="px-5 mt-2 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 active:scale-95 transition duration-100 ease-in-out">View Packages</button>
+        <button [routerLink]="['/package']" [queryParams]="{destination: 'Kashmir'}" class="px-5 mt-2 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-600 active:scale-95 transition duration-100 ease-in-out">View Packages</button>
     </div>
   </div>
 </div>

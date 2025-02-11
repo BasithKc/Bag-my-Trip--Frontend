@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { TripPlanPopupComponent } from './home/components/trip-plan-popup/trip-plan-popup.component';
@@ -20,7 +20,11 @@ import { SharedModule } from '../shared/shared.module';
 import { UserComponent } from './user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { TrendingComponent } from './home/components/trending/trending.component';
+import { ImagePreviewDialogComponent } from './packgeDetailsPage/components/image-preview-dialog/image-preview-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({
@@ -41,6 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryComponent,
     PackageDetails,
     InviewDirective,
+    TrendingComponent,
+    ImagePreviewDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -48,7 +54,11 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-  ]
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class UserModule { }

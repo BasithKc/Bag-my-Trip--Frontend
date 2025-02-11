@@ -4,7 +4,7 @@ import { ChangeDetectorRef } from "@angular/core";
 import { fadeIn,slideInLeft } from "src/app/modules/shared/animations";
 import { TripPlanPopupComponent } from './components/trip-plan-popup/trip-plan-popup.component';
 import { TourService } from '../services/tour.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -27,10 +27,10 @@ import { Router } from '@angular/router';
     ]),
 ]
 })
-export class HomeComponent{
+export class HomeComponent implements OnInit{
  @ViewChild(TripPlanPopupComponent) tripPlanPopup!: TripPlanPopupComponent
 
-  constructor(private cdr: ChangeDetectorRef, private router: Router) {}
+  constructor(private cdr: ChangeDetectorRef, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   iconView = false
   headView = false
@@ -43,6 +43,23 @@ export class HomeComponent{
   //  Whatsapp message configuration
   phoneNumber = '+918943639725'
   message = 'Hello, Tell me about your services'
+
+  ngOnInit(): void {
+    this.activatedRoute.fragment.subscribe(fragment => {
+      if (fragment) {
+        setTimeout(() => {
+          const element = document.getElementById(fragment);
+          if (element) {
+            element.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start',
+              inline: 'start'
+            });
+          }
+        }, 100);
+      }
+    });
+  }
    
  
  openTripPlanPopup  () {

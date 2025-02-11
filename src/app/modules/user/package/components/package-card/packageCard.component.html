@@ -1,19 +1,24 @@
-
-
 <div class="flex justify-center">
     <div class="w-full">
-        
-        <div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3  sm:gap-3 place-items-center overflow-x-auto p-5"> 
-            <div *ngFor="let tour of tours" class="hover:bg-white w-full sm:w-[12.5rem] md:w-[17rem] lg:w-[19rem] flex flex-col p-2 rounded-lg gap-2 hover:shadow-2xl border border-gray-100 hover:border-none active:scale-95 transition ease-in-out duration-300 hover:-translate-y-1 cursor-pointer text-[#181E4B]" [routerLink]="['/package-details', tour._id, 'information']"> 
-                <div class="">
+
+        <div
+            class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3  md:gap-4 place-items-center overflow-x-auto p-5">
+            <div *ngFor="let tour of tours"
+                class="hover:bg-white w-full sm:w-[12.5rem] md:w-[15rem] lg:w-[15rem] xl:w-[19rem] flex flex-col p-2 rounded-lg gap-2 hover:shadow-2xl border border-gray-100 hover:border-none active:scale-95 transition ease-in-out duration-300 hover:-translate-y-1 cursor-pointer text-[#181E4B]"
+                [routerLink]="['/package-details', tour._id, 'information']">
+                <div class="relative">
                     <img [src]="tour.featureImage" class="rounded-t-lg h-[180px] w-full" alt="">
-                </div>
-                <div class="text-[.9rem] px-1">
-                    <div class="text-[1.3rem]"><b> {{ tour.title }} </b></div>
-                    <div class="flex gap-5 pt-2">
-                        <div class="text-[.9rem] font-bold">₹ {{ tour.pricePerPerson }}</div>
-                        <div class="text-[.9rem] font-bold">{{ tour.duration }}</div>
+                    <div class="absolute bottom-0 w-full flex justify-between py-1 bg-orange-600 text-white px-5">
+                        <div class="text-[.9rem] ">From {{ tour.pricePerPerson }} ₹</div>
+                        <div class="text-[.9rem] flex items-center gap-3">
+                            <i class="fa-regular fa-calendar-days flex-shrink-0"></i>
+                            <span class="flex-grow"> {{ tour.duration }}</span>
+                        </div>
                     </div>
+                </div>
+                <div class="text-[.9rem] px-2">
+                    <div class="text-[1.3rem] mt-3 mb-2"><b> {{ tour.title }} </b></div>
+                    <p class="text-sm sm:text-md line-clamp-2 flex-grow ">{{ tour.description}}</p>
                 </div>
             </div>
         </div>
@@ -21,13 +26,17 @@
 
         <div class="w-full flex items-center justify-center mt-10">
             <div class="h-[3.2rem] w-[90%] flex items-center justify-center">
-                <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl"> < </button>
-                <div class="overflow-auto max-w-[80%] flex items-center">
-                    <div class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out">1</div>
-                    <div class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out">2</div>
-                    <div class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out">3</div>
-                </div>
-                <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl"> > </button>
+                <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl"
+                    [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
+                    < </button>
+                        <div class="overflow-auto max-w-[80%] flex items-center">
+                            <div *ngFor="let page of getPageNumbers()" [class.active]="page === currentPage"
+                                (click)="changePage(page)"
+                                class="px-5 py-1 hover:bg-slate-200 rounded-full active:bg-gray-300 active:scale-95 transition ease-in-out">
+                                {{page}} </div>
+                        </div>
+                        <button class="px-3 hover:bg-orange-500 py-1 active:scale-95 transition ease-in-out rounded-xl"
+                            [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)"> > </button>
             </div>
         </div>
 

@@ -1,21 +1,28 @@
 input[type="date"] {
-    position: relative;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-  
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-  }
-  
-  input[type="date"]::-moz-focus-inner {
-    border: 0;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
-  
-::-webkit-scrollbar { display: none; }
 
-*{
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type="date"]::-moz-focus-inner {
+  border: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer */
+}
+
+.active {
+  background-color: #007bff;
+  color: white;
 }
