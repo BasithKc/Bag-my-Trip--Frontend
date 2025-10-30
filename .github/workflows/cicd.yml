@@ -10,7 +10,11 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-
+      - name: 🧹 Clean up old images and containers
+        run: |
+          docker system prune -af
+          docker volume prune -f
+          docker builder prune -af
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -37,7 +41,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker build --no-cache -t basith7618/angular-app .
+          docker build -t basith7618/angular-app .
           docker tag basith7618/angular-app:latest basith7618/angular-app:$(date +%s)
 
       - name: Publish image to dockerhub
